@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的个人信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/MyHome.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-4.3.1.css" />
+</head>
+<body>
+    <div class="main">
+        <header class="top">
+            <nav class="Navigation">
+                <ul class="menu">
+                    <li><a href="~/index">首页</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="headerIntroduce">
+            <div class="bg">
+                <!-- 图形展示区域 -->
+                <div class="Ban_left"></div>
+                <div class="Ban_right"></div>
+                <div class="MyIntroduce">
+                    <!-- 头像 -->
+                    <div class="Touxiang" style="perspective: 2000px;">
+                        <a href="index">
+                            <img src="~/Content/img/touxiang.jpg">
+                        </a>
+                        <p style="color: white;margin-top: 7px;">Xus</p>
+                    </div>
+                    <!-- 头像 -->
+                    <!-- 个人签名 -->
+                    <div class="QianMing">
+                        <p>该用户还没有属于自己的个性签名~</p>
+                    </div>
+                    <!-- 个人签名 -->
+                    @*<div style="margin-top: 10px;">
+                        <button id="Change" type="button" class="btn btn-secondary" style="width: 100px;">
+                            <%=LoginState %>
+                        </button>
+                    </div>*@
+                </div>
+                <!-- 图形展示区域 -->
+            </div>
+        </div>
+        <div class="Conntents">
+
+
+            <div class="Content right_column" style="opacity: 0.9;">
+                <!-- 菜单 -->
+                <div class="app-Menu">
+                    <ul style="text-align: center;padding-left:0;">
+                        <li><a href="javascript:void(0)">修改头像</a></li>
+                        <li><a href="javascript:void(0)">个人资料</a></li>
+                        <li><a href="javascript:void(0)">积分</a></li>
+                    </ul>
+                </div>
+                <!-- 主窗体 -->
+                <div class="Today_Wallpaper">
+
+                    <iframe src="UserInfo" width="100%" height="100%" style="border:none;"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="site-footer">
+        Copyright © 2020 by Edwin Today's share . All rights reserved. | Design By Huangzexu.<br>津ICP备XXXXXXXX号-1
+    </footer>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/MyHome.js" type="text/javascript" charset="utf-8"></script><!-- 本页面js文件 -->
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>风风火火聊天室</title>
+    <link href="~/Content/css/ChatRoom.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- 整体框 -->
+    <div class="RoomDiv" id="app">
+        <!-- 左上角菜单图标 -->
+        <div class="Memu_ico">
+            <img :src="ImagePath" style="width: 100%;height: 100%;border-radius: 10px;">
+        </div>
+        <!-- 右侧导航 -->
+        <div class="L_Memu">
+            <!-- 垂直导航栏 -->
+            <div style="height: 100%;">
+                <ul style="text-align: center;" class="Pop-Box-Memu">
+                    <li>
+                        <span class="icon-users"></span>
+                    </li>
+                    <li>
+                        <span class="icon-user"></span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 在线用户弹出框 -->
+            <div class="Pop-Box OnLineUsers">
+                <div class="UsersList">
+                    <ul>
+                        <li v-for="(item,index) in items" :key="index">
+                            <img :src="item.ImagePath">
+                            <div class="textInfo">
+                                <h1>{{item.NickName}}</h1>
+                                <span>经验：{{item.Experience}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Pop-Box UserInfo">
+                <div class="MyselfInfo" id="MyUserInfo">
+                    <img :src="ImagePath">
+                    <hr>
+                    <div class="DetailInfo" style="margin-top: 40px;">
+                        <span>用户名</span>
+                        <span>XusJaural</span>
+                    </div>
+                    <div class="DetailInfo">
+                        <span>昵称</span>
+                        <span>{{NickName}}</span>
+                    </div>
+                    <div class="DetailInfo">
+                        <span>经验值</span>
+                        <span>{{Experience}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 聊天框头部 -->
+        <div class="Head">
+            <a style="color: #bebebe;">恍恍惚惚红红火火 · 唠嗑店</a>
+            <h1 class="MyslefUserName" contenteditable="true" spellcheck="false">{{NickName}}</h1>
+        </div>
+        <!-- 收到的消息显示框 -->
+        <div class="Message-Box">
+            <!-- 其他用户消息 -->
+        </div>
+        <!-- 下框 -->
+        <div class="Send-Msg">
+            <div class="Send-Memu">
+                <li>
+                    <svg t="1608604969927" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11130"
+                         width="200" height="200">
+                        <path d="M978.943708 312.575805A511.103681 511.103681 0 0 0 709.183877 40.063975a505.855684 505.855684 0 0 0-394.559754 0A506.047684 506.047684 0 0 0 153.536224 149.759906 513.023679 513.023679 0 0 0 5.120317 511.93568a512.895679 512.895679 0 0 0 309.567806 471.871705A500.671687 500.671687 0 0 0 512 1023.99936a501.247687 501.247687 0 0 0 358.271776-149.951906 504.639685 504.639685 0 0 0 108.671932-162.687899 518.271676 518.271676 0 0 0 0-398.78375zM947.199728 511.87168c-0.128 242.431848-195.391878 439.679725-435.199728 439.679725-239.93585 0-435.135728-197.247877-435.135728-439.679725 0-242.495848 195.199878-439.679725 435.135728-439.679725 239.93585-0.064 435.199728 197.183877 435.199728 439.679725z"
+                              fill="#2c2c2c" p-id="11131"></path>
+                        <path d="M311.872125 458.367714c39.487975 0 71.679955-32.44798 71.679955-72.319955s-32.19198-72.319955-71.679955-72.319955c-39.487975 0-71.487955 32.38398-71.487955 72.191955a71.679955 71.679955 0 0 0 71.487955 72.447955zM712.191875 459.775713c39.359975 0 71.423955-32.44798 71.423955-72.255955 0-39.999975-32.06398-72.447955-71.423955-72.447955-39.487975 0-71.679955 32.44798-71.679955 72.447955 0 39.807975 32.19198 72.255955 71.679955 72.255955zM770.879838 621.567612a36.479977 36.479977 0 0 0-50.175968 7.423995c-47.99997 65.151959-126.079921 103.871935-208.70387 103.871935s-160.7039-38.719976-208.63987-103.743935a36.479977 36.479977 0 0 0-50.239968-7.551995 36.287977 36.287977 0 0 0-7.295996 50.559968 326.783796 326.783796 0 0 0 114.303929 96.895939 335.35979 335.35979 0 0 0 303.55181 0 327.551795 327.551795 0 0 0 114.495929-96.959939 36.543977 36.543977 0 0 0-7.295996-50.495968z"
+                              fill="#2c2c2c" p-id="11132"></path>
+                    </svg>
+                </li>
+                <li>
+                    <svg t="1608605269049" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13533"
+                         width="200" height="200">
+                        <path d="M736 0h-384c-67.2 0-128 60.8-128 128h-38.4c-67.2 0-121.6 60.8-121.6 128v640c0 67.2 60.8 128 128 128h480c67.2 0 128-60.8 128-128h32c67.2 0 128-60.8 128-128V256l-224-256z m-64 960h-480c-32 0-64-32-64-64V256c0-32 28.8-64 60.8-64h35.2v576c0 67.2 60.8 128 128 128h384c0 32-32 64-64 64z m224-192c0 32-32 64-64 64h-480c-32 0-64-32-64-64V128c0-32 32-64 64-64h320v128c0 67.2 60.8 128 128 128h96v448z m-96-512c-35.2 0-64-60.8-64-96V64l160 192h-96z m-64 192h-288c-19.2 0-32 12.8-32 32s12.8 32 32 32h288c19.2 0 32-12.8 32-32 0-16-12.8-32-32-32z m0 160h-288c-19.2 0-32 12.8-32 32s12.8 32 32 32h288c19.2 0 32-12.8 32-32 0-16-12.8-32-32-32z"
+                              p-id="13534"></path>
+                    </svg>
+                </li>
+            </div>
+            <!-- 发送消息框 -->
+            <div class="Send-Text-Box">
+                <textarea type="text" name="Send-T" spellcheck="false" class="Multiline">你好鸭~</textarea>
+            </div>
+            <!-- 发送按钮 -->
+            <div class="Send-Botton-Box">
+                <div class="Button_Send">
+                    提交[Enter]
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/ChatRoom.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+    <script src="~/vueDemo/vue.js"></script>
+</body>
+</html>

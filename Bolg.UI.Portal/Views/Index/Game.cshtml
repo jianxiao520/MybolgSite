@@ -1,0 +1,117 @@
+﻿@using Model
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>火柴人小游戏</title>
+    <link href="~/Content/bootstrap-4.3.1.css" rel="stylesheet" />
+    <link href="~/Content/css/GameStyle.css" rel="stylesheet" />
+    <link href="~/Content/css/Game.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="top">
+        <nav class="Navigation">
+            <ul class="menu">
+                <li><a href="~/index">首页</a></li>
+                @{
+                    if (ViewData["IsLogin"].ToString() == "1")
+                    {
+                        string Cookie = Request.Cookies["UserToken"].Value;
+                        bk_user UserData = Bolg.Common.Cache.CacheHelper.GetCache<bk_user> (Cookie) as bk_user;
+                        // var user = (bk_user)Session["User"];
+                        string Us_ProfilePhoto = UserData.Us_ProfilePhoto + ".jpg";
+                        <li style="width: auto; padding-left: 30px;"><a href="~/UserInfo/MyHome" style="text-align:right;"><p style="background: url('../UserHeadPortrait/@Us_ProfilePhoto') no-repeat;background-size: 100% 100%;width: 33px;height: 33px;top:2px;left: -25px;border-radius: 50%;display: inline-block;margin-right: 10px;position: absolute;"></p>@UserData.Us_NickName</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Index/Register">登录&注册</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="app">
+        <div class="Main">
+            <!-- 游戏框头部 -->
+            <div class="col-md-12 play-top row">
+                <strong style="line-height: 50px;margin-left: 20px;">火柴人小游戏[英雄难过棍子关]</strong>
+            </div>
+            <!-- 下面部分 -->
+            <div class="col-md-12 Theme row">
+                <!-- 游戏操作区域 -->
+                <div class="col-md-9 Game bg1">
+                    <div id="MakDiv">
+                        <span>当前积分：</span>
+                        <span class="score">0</span>
+                    </div>
+                    <div class="btn-box">
+                        <p class="btn-main">
+                            <button class="btnClick"></button>
+                        </p>
+                    </div>
+                    <div class="container-Game">
+                        <div class="stick"></div>
+                        <div class="man"><img src="~/Content/img/stick_stand.png" id="imgId" /></div>
+                        <div class="well-box">
+                            <div class="well"></div>
+                            <div class="well"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 积分榜 -->
+                <div class="col-md-3 Game_Credits">
+                    <div class="Tutorial">
+                        <div class="Operation">
+                            <span class="Tittle">操作说明</span>
+                        </div>
+                        <div class="Operation_S">
+                            <span>按住&nbsp;</span>
+                            <span class="ico_c_space"></span>
+                            <span>使杆变长。<br>松开&nbsp;</span>
+                            <span class="ico_c_space"></span>
+                            <span>使杆落下。</span>
+                        </div>
+                        <div class="Operation">
+                            <span class="Tittle">游戏目标</span>
+                        </div>
+                        <div class="Operation_S">
+                            <span>可落地面越来越小，控制好自己的力度拿到更高分！</span>
+                        </div>
+                    </div>
+                    <div class="ranking">
+                        <div class="_tittle">
+                            <strong>排行榜</strong>
+                        </div>
+                        <div class="integral">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>排名</th>
+                                        <th>用户名</th>
+                                        <th>分数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(item,index) in items" :key="index">
+                                        <td>
+                                            <div class="Rank">{{index+1}}</div>
+                                        </td>
+                                        <td>{{item.UserName}}</td>
+                                        <td>{{item.Score}}分</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+    <script src="~/vueDemo/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/Game.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

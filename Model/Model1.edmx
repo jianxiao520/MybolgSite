@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="new_userModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bk_article">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Article_date" Type="datetime" Precision="0" />
+          <Property Name="Article_UserId" Type="int" Nullable="false" />
+          <Property Name="Article_Tittle" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="Article_Content" Type="text" Nullable="false" />
+          <Property Name="Article_Like_Count" Type="int" />
+          <Property Name="Article_Comment_Count" Type="int" />
+          <Property Name="Article_Views" Type="int" />
+        </EntityType>
+        <EntityType Name="bk_article_classify">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+            <PropertyRef Name="Classify_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="int" Nullable="false" />
+          <Property Name="Classify_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_article_labels">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+            <PropertyRef Name="Labels_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="int" Nullable="false" />
+          <Property Name="Labels_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_classify">
+          <Key>
+            <PropertyRef Name="Classify_Id" />
+          </Key>
+          <Property Name="Classify_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Classify_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Classify_Alias" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Classify_Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Classify_ParentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_comments">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment_Date" Type="datetime" Precision="0" />
+          <Property Name="Comment_Like_Count" Type="int" Nullable="false" />
+          <Property Name="Us_Id" Type="int" Nullable="false" />
+          <Property Name="Article_Id" Type="int" Nullable="false" />
+          <Property Name="Comment_Content" Type="text" Nullable="false" />
+          <Property Name="Comment_ParentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_game">
+          <Key>
+            <PropertyRef Name="Us_Id" />
+          </Key>
+          <Property Name="Us_Id" Type="int" Nullable="false" />
+          <Property Name="Game_Score" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_labels">
+          <Key>
+            <PropertyRef Name="Labels_Id" />
+          </Key>
+          <Property Name="Labels_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Labels_Nmae" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Labels_Alias" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Labels_Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_messageroom">
+          <Key>
+            <PropertyRef Name="&#xD;&#xA;Message_ID" />
+          </Key>
+          <Property Name="&#xD;&#xA;Message_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message_UserId" Type="int" Nullable="false" />
+          <Property Name="Message_Content" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Message_SendDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_user">
+          <Key>
+            <PropertyRef Name="Us_Id" />
+          </Key>
+          <Property Name="Us_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Us_Ip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Us_UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Us_NickName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Us_PassWord" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Us_Eamil" Type="varchar" MaxLength="20" />
+          <Property Name="Us_ProfilePhoto" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Us_RegisterTime" Type="datetime" Precision="0" />
+          <Property Name="Us_Birthday" Type="date" />
+          <Property Name="Us_Age" Type="int" />
+          <Property Name="Us_Sex" Type="int" />
+          <Property Name="Us_Phone" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Is_Del" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_user_friends">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Self_id" Type="int" Nullable="false" />
+          <Property Name="Friends_id" Type="int" Nullable="false" />
+          <Property Name="Friends_note" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_usercookie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Us_Id" Type="int" Nullable="false" />
+          <Property Name="ExpirationDate" Type="datetime" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="new_userModelStoreContainer">
+          <EntitySet Name="bk_article" EntityType="Self.bk_article" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_article_classify" EntityType="Self.bk_article_classify" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_article_labels" EntityType="Self.bk_article_labels" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_classify" EntityType="Self.bk_classify" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_comments" EntityType="Self.bk_comments" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_game" EntityType="Self.bk_game" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_labels" EntityType="Self.bk_labels" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_messageroom" EntityType="Self.bk_messageroom" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_user" EntityType="Self.bk_user" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_user_friends" EntityType="Self.bk_user_friends" Schema="new_user" store:Type="Tables" />
+          <EntitySet Name="bk_usercookie" EntityType="Self.bk_usercookie" Schema="new_user" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="new_userModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bk_article">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Article_date" Type="DateTime" />
+          <Property Name="Article_UserId" Type="Int32" Nullable="false" />
+          <Property Name="Article_Tittle" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Article_Content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Article_Like_Count" Type="Int32" />
+          <Property Name="Article_Comment_Count" Type="Int32" />
+          <Property Name="Article_Views" Type="Int32" />
+        </EntityType>
+        <EntityType Name="bk_article_classify">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+            <PropertyRef Name="Classify_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="Int32" Nullable="false" />
+          <Property Name="Classify_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_article_labels">
+          <Key>
+            <PropertyRef Name="Article_Id" />
+            <PropertyRef Name="Labels_Id" />
+          </Key>
+          <Property Name="Article_Id" Type="Int32" Nullable="false" />
+          <Property Name="Labels_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_classify">
+          <Key>
+            <PropertyRef Name="Classify_Id" />
+          </Key>
+          <Property Name="Classify_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Classify_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Classify_Alias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Classify_Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Classify_ParentId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_comments">
+          <Key>
+            <PropertyRef Name="Comment_Id" />
+          </Key>
+          <Property Name="Comment_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment_Date" Type="DateTime" />
+          <Property Name="Comment_Like_Count" Type="Int32" Nullable="false" />
+          <Property Name="Us_Id" Type="Int32" Nullable="false" />
+          <Property Name="Article_Id" Type="Int32" Nullable="false" />
+          <Property Name="Comment_Content" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment_ParentId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_labels">
+          <Key>
+            <PropertyRef Name="Labels_Id" />
+          </Key>
+          <Property Name="Labels_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Labels_Nmae" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Labels_Alias" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Labels_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_messageroom">
+          <Key>
+            <PropertyRef Name="C__Message_ID" />
+          </Key>
+          <Property Name="C__Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message_UserId" Type="Int32" Nullable="false" />
+          <Property Name="Message_Content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message_SendDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_user">
+          <Key>
+            <PropertyRef Name="Us_Id" />
+          </Key>
+          <Property Name="Us_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Us_Ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_NickName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_PassWord" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_Eamil" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Us_ProfilePhoto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_RegisterTime" Type="DateTime" />
+          <Property Name="Us_Birthday" Type="DateTime" />
+          <Property Name="Us_Age" Type="Int32" />
+          <Property Name="Us_Sex" Type="Int32" />
+          <Property Name="Us_Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Is_Del" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_user_friends">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Self_id" Type="Int32" Nullable="false" />
+          <Property Name="Friends_id" Type="Int32" Nullable="false" />
+          <Property Name="Friends_note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bk_usercookie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Us_Id" Type="Int32" Nullable="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="new_userEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bk_article" EntityType="Self.bk_article" />
+          <EntitySet Name="bk_article_classify" EntityType="Self.bk_article_classify" />
+          <EntitySet Name="bk_article_labels" EntityType="Self.bk_article_labels" />
+          <EntitySet Name="bk_classify" EntityType="Self.bk_classify" />
+          <EntitySet Name="bk_comments" EntityType="Self.bk_comments" />
+          <EntitySet Name="bk_labels" EntityType="Self.bk_labels" />
+          <EntitySet Name="bk_messageroom" EntityType="Self.bk_messageroom" />
+          <EntitySet Name="bk_user" EntityType="Self.bk_user" />
+          <EntitySet Name="bk_user_friends" EntityType="Self.bk_user_friends" />
+          <EntitySet Name="bk_usercookie" EntityType="Self.bk_usercookie" />
+          <EntitySet Name="bk_game" EntityType="new_userModel.bk_game" />
+        </EntityContainer>
+        <EntityType Name="bk_game">
+          <Key>
+            <PropertyRef Name="Us_Id" />
+          </Key>
+          <Property Name="Us_Id" Type="Int32" Nullable="false" />
+          <Property Name="Game_Score" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="new_userModelStoreContainer" CdmEntityContainer="new_userEntities">
+          <EntitySetMapping Name="bk_article">
+            <EntityTypeMapping TypeName="new_userModel.bk_article">
+              <MappingFragment StoreEntitySet="bk_article">
+                <ScalarProperty Name="Article_Id" ColumnName="Article_Id" />
+                <ScalarProperty Name="Article_date" ColumnName="Article_date" />
+                <ScalarProperty Name="Article_UserId" ColumnName="Article_UserId" />
+                <ScalarProperty Name="Article_Tittle" ColumnName="Article_Tittle" />
+                <ScalarProperty Name="Article_Content" ColumnName="Article_Content" />
+                <ScalarProperty Name="Article_Like_Count" ColumnName="Article_Like_Count" />
+                <ScalarProperty Name="Article_Comment_Count" ColumnName="Article_Comment_Count" />
+                <ScalarProperty Name="Article_Views" ColumnName="Article_Views" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_article_classify">
+            <EntityTypeMapping TypeName="new_userModel.bk_article_classify">
+              <MappingFragment StoreEntitySet="bk_article_classify">
+                <ScalarProperty Name="Article_Id" ColumnName="Article_Id" />
+                <ScalarProperty Name="Classify_Id" ColumnName="Classify_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_article_labels">
+            <EntityTypeMapping TypeName="new_userModel.bk_article_labels">
+              <MappingFragment StoreEntitySet="bk_article_labels">
+                <ScalarProperty Name="Article_Id" ColumnName="Article_Id" />
+                <ScalarProperty Name="Labels_Id" ColumnName="Labels_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_classify">
+            <EntityTypeMapping TypeName="new_userModel.bk_classify">
+              <MappingFragment StoreEntitySet="bk_classify">
+                <ScalarProperty Name="Classify_Id" ColumnName="Classify_Id" />
+                <ScalarProperty Name="Classify_Name" ColumnName="Classify_Name" />
+                <ScalarProperty Name="Classify_Alias" ColumnName="Classify_Alias" />
+                <ScalarProperty Name="Classify_Description" ColumnName="Classify_Description" />
+                <ScalarProperty Name="Classify_ParentId" ColumnName="Classify_ParentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_comments">
+            <EntityTypeMapping TypeName="new_userModel.bk_comments">
+              <MappingFragment StoreEntitySet="bk_comments">
+                <ScalarProperty Name="Comment_Id" ColumnName="Comment_Id" />
+                <ScalarProperty Name="Comment_Date" ColumnName="Comment_Date" />
+                <ScalarProperty Name="Comment_Like_Count" ColumnName="Comment_Like_Count" />
+                <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+                <ScalarProperty Name="Article_Id" ColumnName="Article_Id" />
+                <ScalarProperty Name="Comment_Content" ColumnName="Comment_Content" />
+                <ScalarProperty Name="Comment_ParentId" ColumnName="Comment_ParentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_labels">
+            <EntityTypeMapping TypeName="new_userModel.bk_labels">
+              <MappingFragment StoreEntitySet="bk_labels">
+                <ScalarProperty Name="Labels_Id" ColumnName="Labels_Id" />
+                <ScalarProperty Name="Labels_Nmae" ColumnName="Labels_Nmae" />
+                <ScalarProperty Name="Labels_Alias" ColumnName="Labels_Alias" />
+                <ScalarProperty Name="Labels_Description" ColumnName="Labels_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_messageroom">
+            <EntityTypeMapping TypeName="new_userModel.bk_messageroom">
+              <MappingFragment StoreEntitySet="bk_messageroom">
+                <ScalarProperty Name="C__Message_ID" ColumnName="&#xD;&#xA;Message_ID" />
+                <ScalarProperty Name="Message_UserId" ColumnName="Message_UserId" />
+                <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+                <ScalarProperty Name="Message_SendDate" ColumnName="Message_SendDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_user">
+            <EntityTypeMapping TypeName="new_userModel.bk_user">
+              <MappingFragment StoreEntitySet="bk_user">
+                <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+                <ScalarProperty Name="Us_Ip" ColumnName="Us_Ip" />
+                <ScalarProperty Name="Us_UserName" ColumnName="Us_UserName" />
+                <ScalarProperty Name="Us_NickName" ColumnName="Us_NickName" />
+                <ScalarProperty Name="Us_PassWord" ColumnName="Us_PassWord" />
+                <ScalarProperty Name="Us_Eamil" ColumnName="Us_Eamil" />
+                <ScalarProperty Name="Us_ProfilePhoto" ColumnName="Us_ProfilePhoto" />
+                <ScalarProperty Name="Us_RegisterTime" ColumnName="Us_RegisterTime" />
+                <ScalarProperty Name="Us_Birthday" ColumnName="Us_Birthday" />
+                <ScalarProperty Name="Us_Age" ColumnName="Us_Age" />
+                <ScalarProperty Name="Us_Sex" ColumnName="Us_Sex" />
+                <ScalarProperty Name="Us_Phone" ColumnName="Us_Phone" />
+                <ScalarProperty Name="Is_Del" ColumnName="Is_Del" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_user_friends">
+            <EntityTypeMapping TypeName="new_userModel.bk_user_friends">
+              <MappingFragment StoreEntitySet="bk_user_friends">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Self_id" ColumnName="Self_id" />
+                <ScalarProperty Name="Friends_id" ColumnName="Friends_id" />
+                <ScalarProperty Name="Friends_note" ColumnName="Friends_note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_usercookie">
+            <EntityTypeMapping TypeName="new_userModel.bk_usercookie">
+              <MappingFragment StoreEntitySet="bk_usercookie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bk_game">
+            <EntityTypeMapping TypeName="new_userModel.bk_game">
+              <MappingFragment StoreEntitySet="bk_game">
+                <ScalarProperty Name="Game_Score" ColumnName="Game_Score" />
+                <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

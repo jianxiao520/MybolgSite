@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的个人信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-4.3.1.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/MyWealth.css" />
+
+</head>
+<body>
+    <h1 class="_tittle"> · 我的积分</h1>
+    <div class="Wallpaper" style="width: 100%;">
+        <form action="Register.axhs" method="POST">
+            <!-- 输入昵称 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">当前资金</span>
+                </div>
+                <input type="text" class="form-control" name="NickName" onfocus="YHMonfocu()" onblur="YHMonblus()">
+            </div>
+            <!-- 输入昵称 -->
+            <!-- 输入邮箱 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">当前积分</span>
+                </div>
+                <input type="text" class="form-control" name="Eamil" onfocus="DZYXonblus()" onblur="DZYXonblus()">
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="SendSave">确 认 保 存</button>
+            <button type="button" class="btn btn-secondary btn-sm btn-block">取 消 保 存</button>
+        </form>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/MyHome.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

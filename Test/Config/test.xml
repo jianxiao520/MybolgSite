@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <!--属性注入UserInfo控制器-->
+  <object type="Program.UserInfoController, Program" singleton="false">
+    <property name="CommentService_" ref="CommentService" />
+  </object>
+</objects>

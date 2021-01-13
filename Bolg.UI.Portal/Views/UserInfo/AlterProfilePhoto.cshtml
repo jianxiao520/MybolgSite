@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的个人信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-4.3.1.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/MyWealth.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/AlterProfilePhoto.css" />
+    <link rel="stylesheet" href="~/Content/css/custom_up_img.css">
+</head>
+<body>
+    <h1 class="_tittle"> · 更改头像</h1>
+    <div class="Wallpaper" style="width: 100%;" id="app">
+        <form action="Register.axhs" method="POST">
+            <!-- 头像 -->
+            <h2>当前我的头像</h2>
+            <p>如果您还没有设置自己的头像，系统会显示为默认头像，您需要自己上传一张新照片来作为自己的个人头像。</p>
+            <div class="input-group input-group-lg InputData">
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">我的<br />头像</span>
+                    </div>
+                    <div class="Home_Touxiang">
+                        <img :src="Us_ProfilePhoto" id="ShowTouxiang">
+                    </div>
+                </div>
+                <div class="input-group Hang">
+                    <div class="custom-file">
+                        <input onchange="showFilename(this.files[0])" type="file" class="custom-file-input" id="inputGroupFile04"
+                               aria-describedby="inputGroupFileAddon04" name="ProfilePhoto" accept="image/jpeg">
+                        <label id="filename_label" class="custom-file-label" for="inputGroupFile04">选择图片作为您的头像</label>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="SendSave">确 认 保 存</button>
+            <button type="button" class="btn btn-secondary btn-sm btn-block">取 消 保 存</button>
+        </form>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/vueDemo/vue.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script><!-- 处理Cookie库 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/cropper.min.js" charset="utf-8"></script><!-- 图片裁剪工具 -->
+    <script src="~/Scripts/custom_up_img.js" charset="utf-8"></script><!-- 图片上传库 -->
+    <script src="~/Scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/AlterProfilePhoto.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

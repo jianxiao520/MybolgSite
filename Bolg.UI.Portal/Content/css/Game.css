@@ -1,0 +1,177 @@
+body {
+	background-image: url(../img/bz9.jpg);
+
+}
+
+.play-top {
+	height: 50px;
+	background-color: whitesmoke;
+	border-radius: 10px;
+	height: 50px;
+	background-color: #393D49;
+	border-radius: 10px 10px 0 0;
+	color: #ddd;
+}
+
+.Theme {
+	height: 600px;
+}
+
+.Game {
+	position: relative;
+	border: 2px solid #393D49;
+	box-shadow: 0 0 20px -5px rgb(139 144 153 / 44%);
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.Game_Credits {
+	border: 1px solid #393D49;
+	background-color: aliceblue;
+}
+
+.Operation {
+
+	height: 30px;
+	border-bottom: 2px solid #b5a4a4;
+
+}
+
+.Tutorial {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.Tittle {
+	height: 30px;
+	display: inline-block;
+	border-bottom: 2px solid #74a901;
+	color: #333;
+	font-weight: 700;
+}
+
+.container {
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+}
+
+.ico_c_space {
+
+	background: url(../img/icon-keyboard.png) no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	width: 78px;
+	height: 29px;
+	background-position: 0 -326px;
+}
+
+.Operation_S {
+	font-size: 13px;
+}
+
+._tittle {
+	width: 50%;
+	height: 25px;
+	margin: auto;
+	background-color: #393D49;
+	border-radius: 0px 0px 10px 10px;
+	text-align: center;
+	color: #fffffffc;
+}
+
+.ranking {
+	height: 400px;
+	border: 1px solid #f7f4da26;
+	margin-top: 10px;
+	box-shadow: -1px -1px 20px 5px #dddddd75;
+}
+
+.Rank {
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	background-color: #FF5722;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	margin-left: 6px;
+}
+
+.table th,
+.table td {
+	border-top: 0;
+	padding: 5px;
+}
+
+.col-md-12 {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.Navigation {
+	position: absolute;
+	z-index: 9999;
+	right: 14px;
+	top: 10px;
+}
+
+.menu {
+	float: right;
+}
+
+.Navigation li {
+	/* 导航栏li样式 */
+	display: inline-block;
+	width: 130px;
+	height: 40px;
+	margin: 6px;
+	border: 2px solid #fff;
+	box-sizing: border-box;
+	transition: all .6s linear;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.Navigation li:hover {
+	transform: scale(1.1);
+	/* color: #373D41; */
+	border: 2px solid #73777A;
+}
+
+.Navigation li:after {
+	content: '';
+	width: 0;
+	background-color: rgba(243, 215, 164, .8);
+	height: 46px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	transition: all .6s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.Navigation li:hover::after {
+	/* 填充效果 */
+	width: 100%;
+}
+
+
+.Navigation li a {
+	/* 菜单按钮文字效果样式 */
+	display: block;
+	line-height: 17px;
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+	transition: all .3s linear;
+	position: relative;
+	z-index: 1;
+}

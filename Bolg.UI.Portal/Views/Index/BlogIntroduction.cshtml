@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>博客概述</title>
+    <link rel="stylesheet" type="text/css" href="~/Scripts/layui/css/layui.css" />
+</head>
+<body>
+    <fieldset class="layui-elem-field layui-field-title site-demo-button" style="margin-top: 30px;">
+        <legend>博客概述</legend>
+    </fieldset>
+    <blockquote class="layui-elem-quote">
+        <p style="font-size: 22px;color: #009688!important;">
+            &nbsp;“Xus博客，是一个分享各种资源的博客。”
+        </p>
+        <br>
+        <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis"></i>
+                <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">HTML结构</h3>
+                    <p>
+                        <ul>
+                            <li>index.html -> 【首页】 展示页: 展示Xus发表的文章以及一些Xus的个人介绍。</li>
+                            <li>DailyShare.html - > 【今日分享】 分享页: 与博客相关，首页分享文章，今日分享页专注分享多媒体资源。</li>
+                            <li>DailyShare.html - > 【今日分享】 分享页: 与博客相关，首页分享文章，今日分享页专注分享多媒体资源。</li>
+                            <li>Register.html - > 【登录&注册】 会员注册页: 登录以及注册写在一个页面方面新用户加入。</li>
+                        </ul>
+                    </p>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis"></i>
+                <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">页面知识点</h3>
+                    <p>
+                        <span class="layui-badge layui-bg-green">【首页】</span>&nbsp;(页面主题:立体)
+                        <ul>
+                            <li>[导航栏]运用了图标字体，更清晰的使用户找到心仪的页面。</li>
+                            <li>[文章列表]悬停运用了放大(scale)+阴影效果，使页面更具有立体感。</li>
+                            <li>[自我介绍]悬停头像利用skewX配合动画修改图形变形达到头像像气泡一样抖动效果，使页面更有活力感。</li>
+                            <li>[照片展示]运用了CSS3 3D的新特性preserve-3d展示图片，与列表呼应3D立体感。</li>
+                        </ul>
+                        <br>
+                        <span class="layui-badge layui-bg-green">【今日分享】</span>&nbsp;(页面主题:静)
+                        <ul>
+                            <li>[壁纸列表]悬停运用灰度(blur())使本来唯美的图片悬停后不失原来的优雅。</li>
+                            <li>[电影列表]悬停运用移动(translate3d)+透明度(opacity)达到忽隐忽现飞出的效果。</li>
+                        </ul>
+
+                        <br>
+                        <span class="layui-badge layui-bg-green">【音乐屋】</span>&nbsp;(页面主题:唯美)
+                        <ul>
+                            <li>[唱片区域]运用了之前旋转的知识点。</li>
+                            <li>[歌词展示]配合几句JS，使歌词滚动。</li>
+                            <li>[媒体控制区]图标均为一张图片(精灵图)设置定位。</li>
+                            <li>[进度条]配合JS获取媒体进度并改变width值达到进度条的简单效果。<</li>
+                        </ul>
+                        <br>
+                        <span class="layui-badge layui-bg-green">【登录&注册】</span>&nbsp;(页面主题:灵动)
+                        <ul>
+                            <li>[轮播图]JS+CSS结合现实轮播图自动轮播与手动切页效果。</li>
+                            <li>[登录注册]为了解决display: none;切换div死板问题，这里使用了z-index+过渡效果来达到div的切换。</li>
+                            <li>[输入框]运用了伪元素，当为焦点时，控制在input框下的伪元素增加宽度来完成焦点动画。</li>
+                        </ul>
+                        <br>
+                    </p>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis"></i>
+                <div class="layui-timeline-content layui-text">
+                    <h3 class="layui-timeline-title">缺点与改进</h3>
+                    <p>
+                        <span class="layui-badge">1</span>
+                        没有完成 正文页 ，考虑到已经有几篇文章；过后改进自己的网页会增加相对于的文章正文页。<br>
+                        <span class="layui-badge">2</span>
+                        页面之间的跳跃比较大；<br>
+                        <span class="layui-badge">3</span>
+                        首页的3D图片展示区与首页有着些许违和感；没有美感概念的我不知如何调整。。<br>
+                        <span class="layui-badge">4</span>
+                        音乐盒的歌词只是被JS简单的控制着(修改top值)；需要歌词精确，要加入每句歌词的时间，JS进行分割并解析滚动。<br>
+                        <span class="layui-badge">5</span>
+                        样式的命名不统一，有时候命名为他的拼音，有时候则为英文，后面改又懒得去逐个修改┭┮﹏┭┮。<br>
+                    </p>
+                </div>
+            </li>
+            <li class="layui-timeline-item"></li>
+        </ul>
+    </blockquote>
+    <script src="~/Scripts/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

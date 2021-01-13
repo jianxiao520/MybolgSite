@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的个人信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="~/css/SelfC.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap-4.3.1.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/MyWealth.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/js/MyHome.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="top">
+            <nav class="Navigation">
+                <ul class="menu">
+                    <li><a href="index">首页</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="headerIntroduce">
+            <div class="bg">
+                <!-- 图形展示区域 -->
+                <div class="Ban_left"></div>
+                <div class="Ban_right"></div>
+                <div class="MyIntroduce">
+                    <!-- 头像 -->
+                    <div class="Touxiang" style="perspective: 2000px;">
+                        <a href="index">
+                            <img src="~/img/touxiang.jpg">
+                        </a>
+                        <p style="color: white;">Xus</p>
+                    </div>
+                    <!-- 头像 -->
+                    <!-- 个人签名 -->
+                    <div class="QianMing">
+                        
+                        <p>该用户还没有属于自己的个性签名~</p>
+                    </div>
+                    <!-- 个人签名 -->
+                </div>
+                <!-- 图形展示区域 -->
+            </div>
+        </div>
+        <div class="Content">
+            <div class="Today_Wallpaper">
+                <h1 class="_tittle"> · 个人信息更改</h1>
+                <div class="Wallpaper" style="width: 100%;">
+                    <form action="Register.axhs" method="POST">
+                        <!-- 输入昵称 -->
+                        <div class="input-group input-group-lg InputData">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">当前资金</span>
+                            </div>
+                            <input type="text" class="form-control" name="NickName" onfocus="YHMonfocu()" onblur="YHMonblus()">
+                        </div>
+                        <!-- 输入昵称 -->
+                        <!-- 输入邮箱 -->
+                        <div class="input-group input-group-lg InputData">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">当前积分</span>
+                            </div>
+                            <input type="text" class="form-control" name="Eamil" onfocus="DZYXonblus()" onblur="DZYXonblus()">
+                        </div>
+
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="SendSave">确 认 保 存</button>
+                        <button type="button" class="btn btn-secondary btn-sm btn-block">取 消 保 存</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        Copyright © 2020 by Edwin Today's share . All rights reserved. | Design By Huangzexu.<br>津ICP备XXXXXXXX号-1
+    </footer>
+</body>
+</html>

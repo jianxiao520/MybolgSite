@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<link href="~/Scripts/layui/css/layui.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/Comment.css" />
+<body>
+    <div class="Comment" id="app">
+        <li v-for="(item,index) in items" :key="index">
+            <div class="D_Comment">
+                <div class="TouXiang">
+                    <img :src="item.ImagePath">
+                </div>
+                <h1 class="NickName">{{item.NickName}}</h1>
+                <p class="Date">{{item.SendDate}}</p>
+                <p class="Content">{{item.Content}}</p>
+                <div class="Love">
+                    <div class="ion-likeList" onclick="AddNum(this)"><a href="#"></a></div>
+                    <p class="Add" :value="item.Comment_Id">{{item.Like_Count}}赞</p>
+                </div>
+            </div>
+        </li>
+    </div>
+        <div class="Send">
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="请输入内容" class="layui-textarea Input"></textarea>
+                <button class="layui-btn Tij" id="formDemo">立即提交</button>
+            </div>
+        </div>
+    <footer class="site-footer">
+        Copyright © 2020 by Edwin Today's share . All rights reserved. | Design By Huangzexu.<br>
+        津ICP备XXXXXXXX号-1
+    </footer>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <script src="~/Scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/vueDemo/vue.js"></script>
+    <script src="~/Scripts/Comment.js"></script>
+</body>
+
+</html>

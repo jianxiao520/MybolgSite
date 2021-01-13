@@ -1,0 +1,47 @@
+/*reset css starts here*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, body, html, form, fieldset {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-weight: normal;
+    border: 0
+}
+
+form, fieldset {
+    width: 100%
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+}
+
+.clear {
+    clear: both;
+    width: auto !important
+}
+
+ul {
+    list-style: none;
+}
+
+a:focus, input:focus, textarea:focus, *:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.nobg {
+    background: transparent !important;
+}
+
+/*reset css ends here*/

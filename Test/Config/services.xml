@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object name="IDbSession" type="Bolg.DALFactory.DbSessionFactory,Bolg.DALFactory" singleton="false" factory-method="GetDbSession">
+  </object>
+  <!--<object name="UserService" type="Bolg.BLL.UserService,Bolg.BLL" singleton="false">
+    <property name="db" ref="IDbSession"></property>
+    <property name="currentDal" ref="UserDAL"></property>
+  </object>
+  <object name="TokenService" type="Bolg.BLL.TokenService,Bolg.BLL" singleton="false">
+    <property name="db" ref="IDbSession"></property>
+    <property name="currentDal" ref="TokenDAL"></property>
+  </object>-->
+  <object name="CommentService" type="Bolg.BLL.CommentService,Bolg.BLL" singleton="false">
+    <property name="db" ref="IDbSession"></property>
+    <property name="currentDal" ref="CommentDAL"></property>
+  </object>
+</objects>

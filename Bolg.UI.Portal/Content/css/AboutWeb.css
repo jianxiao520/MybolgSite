@@ -1,0 +1,7 @@
+.layui-tab{
+	width: 70%;
+	margin: auto !important;
+}
+.layui-tab-title li{
+	font-size: 20px !important;
+}

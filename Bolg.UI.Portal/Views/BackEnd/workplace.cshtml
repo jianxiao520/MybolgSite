@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="~/css/font.css">
+		<link rel="stylesheet" href="~/css/xadmin.css">
+		<script src="~/lib/layui/layui.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="~/css/admin.css" />
+		<script type="text/javascript" src="~/js/xadmin.js"></script>
+	</head>
+	<body>
+		<div class="layui-fluid ew-console-wrapper">
+			<div class="layui-row layui-col-space15">
+				<div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							访问量<span class="layui-badge layui-badge-green pull-right">日</span>
+						</div>
+						<div class="layui-card-body">
+							<p class="lay-big-font">25,848</p>
+							<p>总访问量<span class="pull-right">280 万</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							销售额<span class="layui-badge layui-badge-blue pull-right">月</span>
+						</div>
+						<div class="layui-card-body">
+							<p class="lay-big-font"><span style="font-size: 26px;line-height: 1;">¥</span>12,000</p>
+							<p>总销售额<span class="pull-right">68 万</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							订单量<span class="layui-badge layui-badge-red pull-right">周</span>
+						</div>
+						<div class="layui-card-body">
+							<p class="lay-big-font">1,680</p>
+							<p>转化率<span class="pull-right">60%</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm6 layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">
+							新增用户
+							<span class="icon-text pull-right" lay-tips="指标说明" lay-direction="4" lay-offset="5px,5px">
+								<i class="layui-icon layui-icon-tips"></i>
+							</span>
+						</div>
+						<div class="layui-card-body">
+							<p class="lay-big-font">128 <span style="font-size: 24px;line-height: 1;">位</span></p>
+							<p>总用户<span class="pull-right">10800 人</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-xs12 layui-col-sm6 layui-col-md9">
+					<div class="layui-card" style="overflow: hidden;">
+						<div class="layui-card-header">用户分布</div>
+						<div class="layui-card-body">
+							<div class="layui-row">
+								<div class="layui-col-md8 layui-col-sm7">
+									<div id="consoleChartsMap" style="height: 300px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;"
+									 _echarts_instance_="ec_1608128680341">
+										<div style="position: relative; width: 628px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas
+											 data-zr-dom-id="zr_0" width="693" height="331" style="position: absolute; left: 0px; top: 0px; width: 628px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div>
+										<div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 140px; top: 184px; pointer-events: none;">用户数量<br>青海
+											: 167</div>
+									</div>
+								</div>
+								<div class="layui-col-md4 layui-col-sm5">
+									<table class="layui-table" lay-skin="line" style="margin-top: 15px;">
+										<thead>
+											<tr>
+												<td>排名</td>
+												<td>地区</td>
+												<td>人数</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>浙江</td>
+												<td>62310</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>上海</td>
+												<td>59190</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>广东</td>
+												<td>55891</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>北京</td>
+												<td>51919</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>山东</td>
+												<td>39231</td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>湖北</td>
+												<td>37109</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="~/js/echarts.min.js"></script>
+		<script src="~/js/china.js"></script>
+		<script src="~/js/echarts-wordcloud.min.js"></script>
+		<script type="text/javascript">
+			
+			        /** 渲染地图图表 */
+			        var myCharts4 = echarts.init(document.getElementById('consoleChartsMap'));
+			        var options4 = {
+			            tooltip: {trigger: 'item'},
+			            dataRange: {
+			                min: 0, max: 6e4, text: ['高', '低'], color: ['#2395FF', '#f2f2f2'], itemHeight: 60, itemWidth: 12
+			            }, series: [{
+			                name: '用户数量', type: 'map', mapType: "china",
+			                itemStyle: {normal: {label: {show: true, color: '#262626'}, borderColor: '#dddddd'}},
+			                emphasis: {label: {show: true, color: '#fff'}, itemStyle: {areaColor: '#FACF20'}},
+			                top: '0px', left: '15px', bottom: '0px'
+			            }]
+			        };
+			        myCharts4.setOption(options4);
+			        // 赋值
+			        myCharts4.setOption({
+			            series: [{
+			                data: [
+			                    {name: "西藏", value: 60},
+			                    {name: "青海", value: 167},
+			                    {name: "宁夏", value: 210},
+			                    {name: "海南", value: 252},
+			                    {name: "甘肃", value: 502},
+			                    {name: "贵州", value: 570},
+			                    {name: "新疆", value: 661},
+			                    {name: "云南", value: 8890},
+			                    {name: "重庆", value: 10010},
+			                    {name: "吉林", value: 5056},
+			                    {name: "山西", value: 2123},
+			                    {name: "天津", value: 9130},
+			                    {name: "江西", value: 10170},
+			                    {name: "广西", value: 6172},
+			                    {name: "陕西", value: 9251},
+			                    {name: "黑龙江", value: 5125},
+			                    {name: "内蒙古", value: 1435},
+			                    {name: "安徽", value: 9530},
+			                    {name: "北京", value: 51919},
+			                    {name: "福建", value: 3756},
+			                    {name: "上海", value: 59190},
+			                    {name: "湖北", value: 37109},
+			                    {name: "湖南", value: 8966},
+			                    {name: "四川", value: 31020},
+			                    {name: "辽宁", value: 7222},
+			                    {name: "河北", value: 3451},
+			                    {name: "河南", value: 9693},
+			                    {name: "浙江", value: 62310},
+			                    {name: "山东", value: 39231},
+			                    {name: "江苏", value: 35911},
+			                    {name: "广东", value: 55891}
+			                ]
+			            }]
+			        });
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+/* 头像外框 */
+.Home_Touxiang {
+	background-color: #e9ecef;
+	border: 1px solid #ced4da;
+	height: 200px;
+	width: 200px;
+}
+
+/* 头像img */
+.Home_Touxiang img {
+	height: 90%;
+	width: 90%;
+	border-radius: 50%;
+	margin: 10px;
+	border: 2px solid #4f76daad;
+}
+
+/* 上传表格 */
+.Hang {
+	padding-top: 20px;
+	align-self: flex-end !important;
+}
+
+/* 提示文字 */
+h2,
+p {
+	text-align: left;
+}
+
+/* 整体上传框 */
+.InputData {
+	padding-top: 10px;
+}

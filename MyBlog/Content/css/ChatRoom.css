@@ -1,0 +1,538 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+
+@font-face {
+    font-family: Abril-Fatface;
+    src: url(../fonts/4.ttf);
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?s0xf1v');
+    src: url('../fonts/icomoon.eot?s0xf1v#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?s0xf1v') format('truetype'), url('../fonts/icomoon.woff?s0xf1v') format('woff'), url('../fonts/icomoon.svg?s0xf1v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 字体图标设置 */
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga"1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 字体图标 */
+.icon-user:before {
+    content: "\e971";
+}
+
+.icon-users:before {
+    content: "\e972";
+}
+
+.icon-menu:before {
+    content: "\e9bb";
+}
+
+
+
+.Message-Box::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.Message-Box::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    background: #a39e9e6b;
+}
+
+.Message-Box::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    border-radius: 10px;
+}
+
+
+[contenteditable]:focus {
+    outline: none;
+    color: #fbc204c2;
+}
+
+.L_Memu {
+    width: 5%;
+    height: 92%;
+    background-color: #606060;
+    position: fixed;
+    transition: all 1s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /* margin-top: 8%; */
+    bottom: 0;
+}
+
+
+.RoomDiv {
+    border: 1px solid #cbcbcb;
+    box-shadow: 0px 0px 18px 5px #ddddddbf;
+    border-radius: 10px 10px 10px 0;
+    width: 70%;
+    height: 90%;
+    margin: auto;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    background-color: #F5F5F5;
+    padding-bottom: 1px;
+    overflow: hidden;
+}
+
+.Message-Box {
+    border-bottom: 1px solid #bababadd;
+    height: 74%;
+    overflow-y: auto;
+    width: 95%;
+    float: right;
+}
+
+.MyslefUserName {
+    font-size: 17px;
+    color: #f0f8ff9c;
+    /* border: 1px solid; */
+    background-color: green;
+    padding: 3px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+
+.Head {
+    text-align: center;
+    height: 8%;
+    background-color: #6c6c6c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 0px 10px 0px 0px;
+}
+
+.Right-arrow {
+    position: absolute;
+    right: 100%;
+    top: 7px;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent;
+    margin-bottom: -4px;
+    border-right-width: 8px;
+    border-right-color: currentColor;
+    color: #ffffff;
+}
+
+    .Right-arrow:hover {
+        background-color: #DDDDDD;
+    }
+
+.Content {
+    font-family: ui-monospace;
+    height: 100%;
+    line-height: 35px;
+}
+
+.Left-arrow {
+    position: absolute;
+    left: 100%;
+    top: 7px;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent;
+    margin-bottom: -4px;
+    border-left-width: 8px;
+    border-left-color: currentColor;
+    color: #9EEA6A;
+}
+
+
+.Right-box {
+    right: 100px;
+}
+
+.Left-box {
+    left: 100px;
+}
+
+.Message-Content {
+    height: 35px;
+    position: absolute;
+    top: 45%;
+    box-shadow: -3px 7px 17px 4px #bcbcc13d;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.Send-Text-Box {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 14%;
+    padding: 0px 13px 0px 13px;
+    box-sizing: border-box;
+    margin-top: 13px;
+}
+
+.Box-Sender {
+    text-align: left;
+}
+
+
+.Box-Receiver {
+    text-align: right;
+}
+
+/* 上框样式 */
+.MessageB {
+    height: 100px;
+    position: relative;
+    margin: 10px;
+    z-index: -1;
+}
+
+/* 下框样式 */
+.Send-Msg {
+    height: 18%;
+    background-color: white;
+    border-radius: 0px 0px 10px 0px;
+    position: absolute;
+    width: 95%;
+    right: 0;
+    bottom: 0;
+}
+
+/* 小功能图标 */
+.Send-Memu {
+    position: absolute;
+    left: 14px;
+    top: 5px;
+}
+
+    /* 列表大小 */
+    .Send-Memu li {
+        width: 22px;
+        height: 22px;
+        list-style: none;
+        float: left;
+        margin-right: 15px;
+        border-radius: 50%;
+        transition: 0.4s;
+    }
+
+        .Send-Memu li:hover {
+            box-shadow: 4px -2px 4px 0px #b4b4b4f2;
+            cursor: pointer;
+        }
+
+
+
+/* svg图标占比 */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 菜单小图标 */
+.Memu_ico {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    cursor: pointer;
+    /* padding: 10px; */
+    color: #bcbcc1;
+}
+
+/* 对话消息用户头像 */
+.Portrait {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.UserName {
+    position: absolute;
+    top: 3%;
+    margin-top: 10px;
+}
+
+/* 系统消息样式 */
+.Message-System {
+    padding: 5px 15px 5px 15px;
+    background-color: #bebebe96;
+    border-radius: 7px;
+    color: white;
+}
+
+.Multiline {
+    outline: none;
+    resize: none;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    font-family: Abril-Fatface;
+}
+
+.Send-Botton-Box {
+    position: absolute;
+    bottom: 8px;
+    right: 26px;
+}
+
+
+/* 提交按钮样式 */
+.Button_Send {
+    width: 90px;
+    height: 24px;
+    border-radius: 5px;
+    background-color: #129611c9;
+    color: white;
+    line-height: 24px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+    /* 提交按钮悬停样式 */
+    .Button_Send:hover {
+        cursor: pointer;
+        background-color: #129611;
+    }
+
+.L_Memu li {
+    margin: auto;
+    padding: 10px 0px 10px 0;
+    font-size: 2.5em;
+    list-style: none;
+    color: #bcbcc1;
+    /* background-color: #8f8f8f70; */
+}
+
+    .L_Memu li:hover {
+        cursor: pointer;
+        background-color: #454545;
+    }
+
+.Memu_ico:hover + .L_Memu {
+    left: 0;
+    opacity: 1;
+}
+
+.L_Memu:hover {
+    left: 0;
+    opacity: 1;
+}
+
+
+/* 左侧弹出信息框 */
+.Pop-Box {
+    position: absolute;
+    width: 250px;
+    height: 360px;
+    background-color: #454545;
+    top: 0;
+    left: 60px;
+    opacity: 0;
+    display: none;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #7d7d7d;
+}
+
+.UsersList {
+    height: 100%;
+    /* text-align: center; */
+}
+
+    .UsersList ul {
+        overflow-y: auto;
+        height: 100%;
+    }
+
+        .UsersList ul::-webkit-scrollbar {
+            /*滚动条整体样式*/
+            width: 10px;
+            /*高宽分别对应横竖滚动条的尺寸*/
+            height: 1px;
+        }
+
+        .UsersList ul::-webkit-scrollbar-thumb {
+            /*滚动条里面小方块*/
+            border-radius: 10px;
+            background: #a39e9e6b;
+        }
+
+        .UsersList ul::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            border-radius: 10px;
+        }
+
+    .UsersList li:hover {
+        background-color: #585858;
+    }
+
+    .UsersList li {
+        height: 85px;
+        /* line-height: 85px; */
+        border-bottom: 1px solid #7d7979dd;
+    }
+
+    .UsersList img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        float: left;
+        /* width: 33%; */
+        margin-left: 18px;
+    }
+
+.textInfo {
+    position: relative;
+    float: left;
+    width: 50%;
+    margin-left: 10px;
+    color: #a29c95;
+    top: 5px;
+}
+
+.UsersList h1 {
+    font-size: 22px;
+    position: absolute;
+    top: 15px;
+}
+
+.UsersList span {
+    font-size: 15px;
+    top: 50px;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+.MyselfInfo {
+    height: 100%;
+    text-align: center;
+}
+
+    .MyselfInfo img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 1px solid #7c7c7c5e;
+        padding: 2px;
+        margin: 30px 0;
+    }
+
+    .MyselfInfo hr {
+        width: 90%;
+        margin: auto;
+        /* color: #5cc0c0; */
+        background-color: #5f5f5fe0;
+        height: 1px;
+        border: none;
+    }
+
+.DetailInfo {
+    margin: 10px 0;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+}
+
+    .DetailInfo span:nth-child(1) {
+        position: absolute;
+        left: 7%;
+        color: #a5a5a5ad;
+        width: 26%;
+        text-align-last: justify;
+    }
+
+    .DetailInfo span:nth-child(2) {
+        width: 48%;
+        position: absolute;
+        text-align: left;
+        left: 40%;
+        padding-left: 3px;
+        color: #dddddd;
+        border-bottom: 1px solid #8d8d8db0;
+    }
+
+
+
+.MyselfInfo:nth-child(2) {
+    margin-top: 30px;
+}
+
+
+@media screen and (min-width:1200px) {
+    .L_Memu li {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .L_Memu li {
+        font-size: 2.0em;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .L_Memu li {
+        font-size: 1.0em;
+    }
+}

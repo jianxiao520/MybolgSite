@@ -1,0 +1,68 @@
+* {
+    font-family: SemiBold;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+._tittle {
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-bottom: 3px dashed #ececec;
+}
+.Wallpaper {
+    display: inline-block;
+}
+.Wallpaper, .Cinema {
+    /* height: 160px; */
+    position: relative;
+    padding-top: 25px;
+    /* padding-bottom: 50px; */
+    text-align: center;
+}
+
+#senddata {
+    display: flex;
+    flex-wrap: wrap;
+}
+.InputData {
+    margin-bottom: 1rem !important;
+}
+
+
+
+.Wallpaper img, .Show, .down {
+    transition: all 1s;
+}
+.Hang {
+    align-self: flex-end !important;
+    left: 2.1% !important;
+    width: 65% !important;
+}
+.form-control {
+    border: 1px solid #ced4da !important;
+    padding: 5px 10px !important;
+    font-size: 23px !important;
+    height: calc(1.5em + 2rem + 2px) !important;
+}
+
+.alert-info {
+    width: 220px !important;
+}
+
+.alert {
+    line-height: 1.8 !important;
+    margin-bottom: 0px !important;
+    line-height: 40px !important;
+}
+
+.custom-select-sm {
+    font-size: 2rem !important;
+    width: 15% !important;
+    height: calc(1.5em + .5rem + 11px) !important;
+}

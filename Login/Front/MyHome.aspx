@@ -1,0 +1,167 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyHome.aspx.cs" Inherits="Login.Front.MyHome" %>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/SelfC.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-4.3.1.css" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="https://cdn.bootcss.com/gijgo/1.9.13/combined/css/gijgo.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.4.6.0.css">
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/amazeui.cropper.css">
+		<link rel="stylesheet" href="css/custom_up_img.css">
+
+		<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/popper.js/1.15.0/esm/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
+		<script src="https://cdn.bootcss.com/gijgo/1.9.13/combined/js/messages/messages.zh-cn.min.js"></script>
+		<script src="js/MyHome.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/amazeui.min.js" charset="utf-8"></script>
+		<script src="js/cropper.min.js" charset="utf-8"></script>
+		<script src="js/custom_up_img.js" charset="utf-8"></script>
+        <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+         <script src="js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+        <link href="layui/css/layui.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="main">
+			<header class="top">
+				<nav class="Navigation">
+					<ul class="menu">
+						<li><a href="index.aspx">首页</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div class="headerIntroduce">
+				<div class="bg">
+					<!-- 图形展示区域 -->
+					<div class="Ban_left"></div>
+					<div class="Ban_right"></div>
+					<div class="MyIntroduce">
+						<!-- 头像 -->
+						<div class="Touxiang" style="perspective: 2000px;">
+							<a href="index.html">
+								<img src="img/touxiang.jpg">
+							</a>
+							<p style="color: white;">Xus</p>
+						</div>
+						<!-- 头像 -->
+
+						<!-- 个人签名 -->
+						<div class="QianMing">
+							<p>该用户还没有属于自己的个性签名~</p>
+						</div>
+						<!-- 个人签名 -->
+						<div style="margin-top: 10px;">
+							<button id="Change" type="button" class="btn btn-secondary" style="width: 100px;"><%=LoginState %></button>
+						</div>
+					</div>
+					<!-- 图形展示区域 -->
+				</div>
+			</div>
+			<div class="Content" style="opacity: 0.3;">
+				<div class="Today_Wallpaper">
+					<h1 class="_tittle"> · 个人信息更改</h1>
+					<div class="Wallpaper" style="width: 100%;">
+						<form action="Register.axhs" method="POST" id="senddata">
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">我的<br />头像</span>
+								</div>
+								<div class="Home_Touxiang">
+									<img src="<%=Us_ProfilePhoto %>" id="ShowTouxiang">
+								</div>
+								<div class="input-group Hang">
+									<div class="custom-file">
+										<input onchange="showFilename(this.files[0])" type="file" class="custom-file-input" id="inputGroupFile04"
+										 aria-describedby="inputGroupFileAddon04" name="ProfilePhoto" accept="image/jpeg">
+										<label id="filename_label" class="custom-file-label" for="inputGroupFile04">选择图片作为您的头像</label>
+									</div>	
+								</div>
+							</div>
+							<!-- 输入昵称 -->
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">昵称</span>
+								</div>
+								<input type="text" class="form-control" name="NickName" onfocus="YHMonfocu()" onblur="YHMonblus()" value="<%=NickName %>">
+								<div class="alert alert-info" id="W_NickName">
+									请输入您的昵称...
+								</div>
+							</div>
+							<!-- 输入昵称 -->
+							<!-- 输入邮箱 -->
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">邮箱</span>
+								</div>
+								<input type="text" class="form-control" name="Eamil" onfocus="DZYXonblus()" onblur="DZYXonblus()" value="<%=Email %>">
+								<div class="alert alert-info" id="W_Eamil">
+									请输入您的邮箱...
+								</div>
+							</div>
+							<!-- 输入邮箱 -->
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">手机号</span>
+								</div>
+								<input type="text" class="form-control" name="Phone" onfocus="LXDHonblus()" onblur="LXDHonblus()" value="<%=Phone %>">
+								<div class="alert alert-info" id="W_Phone">
+									请输入您的手机号...
+								</div>
+							</div>
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">出生日期</span>
+								</div>
+								<input id="datepicker" class="form-control" name="Birth" onfocus="CSRQonblus()" onblur="CSRQonblus()" value="<%=Birth %>">
+								<div class="alert alert-info" id="W_Birth" >
+									请选择您的出生日期...
+								</div>
+							</div>
+
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend">
+									<span class="input-group-text">性别</span>
+								</div>
+								<select name="cars" class="custom-select-sm">
+									<option value="-1"  <%=Us_Sex[0]%>>保密</option>
+									<option value="0" <%=Us_Sex[1]%>>男</option>
+									<option value="1" <%=Us_Sex[2] %>>女</option>
+								</select>
+								<div class="alert alert-info">
+									请选择您的性别...
+								</div>
+							</div>
+							<!-- 显示注册时间 -->
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend" >
+									<span class="input-group-text">注册时间</span>
+								</div>
+								<input type="text" class="form-control" value="<%=Us_RegisterTime %>" disabled>
+							</div>
+							<!-- 显示注册日期 -->
+							<div class="input-group input-group-lg InputData">
+								<div class="input-group-prepend" >
+									<span class="input-group-text">注册IP</span>
+								</div>
+								<input type="text" class="form-control" value="<%=Us_Ip %>" disabled>
+							</div>			
+							<button type="button" class="btn btn-primary btn-lg btn-block" id="SendSave">确 认 保 存</button>
+							<button type="button" class="btn btn-secondary btn-sm btn-block">取 消 保 存</button>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="site-footer">
+			Copyright © 2020 by Edwin Today's share . All rights reserved. | Design By Huangzexu.<br>津ICP备XXXXXXXX号-1
+		</footer>
+	</body>
+</html>

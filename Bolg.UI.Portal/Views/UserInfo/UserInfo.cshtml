@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-4.3.1.css" />
+    <link href="~/Content/css/gijgo.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/font-awesome.4.6.0.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/UserInfo.css" />
+</head>
+<body>
+    <h1 class="_tittle"> · 个人信息</h1>
+    <div class="Wallpaper" style="width: 100%;" id="app">
+        <form action="Register.axhs" method="POST" id="senddata">
+            <!-- 输入昵称 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">昵称</span>
+                </div>
+                <input type="text" class="form-control" name="NickName" onfocus="YHMonfocu()" onblur="YHMonblus()" :value="NickName">
+                <div class="alert alert-info" id="W_NickName">
+                    请输入您的昵称...
+                </div>
+            </div>
+            <!-- 输入昵称 -->
+            <!-- 输入邮箱 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">邮箱</span>
+                </div>
+                <input type="text" class="form-control" name="Eamil" onfocus="DZYXonblus()" onblur="DZYXonblus()" :value="Eamil">
+                <div class="alert alert-info" id="W_Eamil">
+                    请输入您的邮箱...
+                </div>
+            </div>
+            <!-- 输入邮箱 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">手机号</span>
+                </div>
+                <input type="text" class="form-control" name="Phone" onfocus="LXDHonblus()" onblur="LXDHonblus()" :value="Phone">
+                <div class="alert alert-info" id="W_Phone">
+                    请输入您的手机号...
+                </div>
+            </div>
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">出生日期</span>
+                </div>
+                <input id="datepicker" class="form-control" name="Birth" onfocus="CSRQonblus()" onblur="CSRQonblus()" value="Birth">
+                <div class="alert alert-info" id="W_Birth">
+                    请选择您的出生日期...
+                </div>
+            </div>
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">性别</span>
+                </div>
+                <select name="cars" class="custom-select-sm">
+                    <option value="-1">保密</option>
+                    <option value="0">男</option>
+                    <option value="1">女</option>
+                </select>
+                <div class="alert alert-info">
+                    请选择您的性别...
+                </div>
+            </div>
+            <!-- 显示注册时间 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">注册时间</span>
+                </div>
+                <input type="text" class="form-control" :value="Us_RegisterTime" disabled>
+            </div>
+            <!-- 显示注册日期 -->
+            <div class="input-group input-group-lg InputData">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">注册IP</span>
+                </div>
+                <input type="text" class="form-control" :value="Us_Ip" disabled>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="SendSave">确 认 保 存</button>
+            <button type="button" class="btn btn-secondary btn-sm btn-block">取 消 保 存</button>
+        </form>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/vueDemo/vue.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script><!-- 处理Cookie库 -->
+    <script src="~/Scripts/gijgo.min.js"></script><!-- 日历 -->
+    <script src="~/Scripts/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/UserInfo.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/messages.zh-cn.min.js"></script><!-- 表单类 -->
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 注入TokenDAL、UserDAL-->
+<objects xmlns="http://www.springframework.net">
+  <object name="TokenDAL" type="Bolg.DAL.TokenDAL,Bolg.DAL" singleton="false"/>
+  <object name="UserDAL" type="Bolg.DAL.UserDAL,Bolg.DAL" singleton="false"/>
+  <object name="CommentDAL" type="Bolg.DAL.CommentDAL,Bolg.DAL" singleton="false"/>
+  <object name="GameDAL" type="Bolg.DAL.GameDAL,Bolg.DAL" singleton="false"/>
+  <!--注入到DbSession属性(TokenDAL、UserDAL)-->
+  <object name="DbSession" type="Bolg.DAL.DbSession,Bolg.DAL" singleton="false"  >
+    <property name="TokenDAL" ref="TokenDAL"></property>
+    <property name="UserDAL" ref="UserDAL"></property>
+    <property name="CommentDAL" ref="CommentDAL"></property>
+    <property name="GameDAL" ref="GameDAL"></property>
+  </object>
+</objects>
