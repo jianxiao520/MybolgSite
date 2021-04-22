@@ -49,7 +49,7 @@ $("#SendSave").click(function () {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "ModifUserInfo_",
+        url: "/UserInfo/ModifUserInfo_",
         async: false,
         data: SendData,
         success: function (data) {

@@ -19,6 +19,7 @@ namespace Bolg.UI.Portal.Controllers
         public static bk_user Sso_UserInfo { get; set; }
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            
             base.OnActionExecuting(filterContext);
             //确定为返回视图动作
             if (filterContext.ActionDescriptor.ActionName.IndexOf("_") == -1)

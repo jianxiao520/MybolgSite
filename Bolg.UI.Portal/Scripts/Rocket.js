@@ -82,7 +82,7 @@ function OutLogin() {
             $.ajax({
                 type: "POST",
                 dataType: "json",
-                url: "Login_",
+                url: "/Index/Login_",
                 async: false,
                 data: SendData,
                 success: function (data) {

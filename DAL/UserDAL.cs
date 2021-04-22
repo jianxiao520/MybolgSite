@@ -38,7 +38,7 @@ namespace Bolg.DAL
         /// <returns></returns>
         public IQueryable<bk_user> QueryAllData(string AdminName)
         {
-            return this.GetEntities(o => o.Us_UserName != AdminName).AsQueryable();
+            return this.GetEntities(o => o.Us_UserName != AdminName);
         }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace Bolg.DAL
         /// <param name="PassWord">密码</param>
         /// <returns></returns>
         public IQueryable<bk_user> QueryPwd(string UserName, string PassWord)
-        {   
-            return this.GetEntities(o => o.Us_UserName.Equals(UserName)).Where(o => o.Us_PassWord.Equals(PassWord)).AsQueryable();
+        {
+            return this.GetEntities(o => o.Us_UserName.Equals(UserName)).Where(o => o.Us_PassWord.Equals(PassWord) && o.Is_Del == 0).AsQueryable();
         }
 
         /// <summary>

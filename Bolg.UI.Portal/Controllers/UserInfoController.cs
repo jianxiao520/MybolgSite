@@ -19,7 +19,6 @@ namespace Bolg.UI.Portal
         {
             return View();
         }
-
         public ActionResult MyHome()
         {
             return View();
@@ -128,7 +127,7 @@ namespace Bolg.UI.Portal
                     }
                     else
                     {
-                        Msg = "未知错误，保存失败~!"; State = 0;
+                        Msg = "保存失败：手机号或邮箱已存在，请修改！"; State = 0;
                     }
                 }
                 catch (Exception)

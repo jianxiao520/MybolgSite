@@ -112,6 +112,7 @@ function ModifyUserInfo(UserId, NewNickName, CallBack) {
 }
 
 
+
 //自身发送消息出去
 function Add_Msg_My(HeadPortrait) {
     Content = $("[name='Send-T']").val();
@@ -123,6 +124,7 @@ function Add_Msg_My(HeadPortrait) {
     } else {
         Add_System('连接已经关闭');
     }
+    
 }
 
 //系统发送消息
@@ -148,6 +150,7 @@ function Add_Msg_Other(UserName, Content) {
 //消息插入到div
 var Information = {
     Message_Add_Self: function (Content, HeadPortrait, Element) {
+        if (isEmpty(Content)) return;
         var Addstyle =
             '<div class="Box-Receiver MessageB"><img src="{0}" class="Portrait"/><div class="UserName Right-box"><a href="">我</a></div><div class="Message-Content Right-box" style="background-color:#9EEA6A;"><div class="Left-arrow"></div><span class="Content">{1}</span></div></div>'
                 .format(HeadPortrait, Content);
@@ -171,6 +174,15 @@ var Information = {
     Message_Add_UserName: function (UserName, Element) {
         $(Element).html(UserName);
     }
+}
+
+//是否为空(包括空字符串、空格、null,{})
+function isEmpty(strings){
+        if ((strings + '').replace(/(^\s*)|(\s*$)/g, '').length === 0) { //已修正bug[当strings为数字时，会报strings.replace is not a function]
+            return true;
+        }
+    // 不为空返回false
+    return false;
 }
 
 //格式化文本拓展方法

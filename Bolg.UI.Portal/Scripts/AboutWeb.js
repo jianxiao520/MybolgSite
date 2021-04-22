@@ -17,16 +17,16 @@ layui.use('element', function() {
 	//一些事件监听
 	element.on('tab(docDemoTabBrief)', function(data) {
 		switch (data.index) {
+			//case 0:
+			//	$("iframe").attr("src", "Self_Introduction");
+			//	break;
 			case 0:
-				$("iframe").attr("src", "Self_Introduction");
-				break;
-			case 1:
 				$("iframe").attr("src", "Design_Document");
 				break;
-			case 2:
+			case 1:
 				$("iframe").attr("src", "BlogIntroduction");
 				break;
-			case 3:
+			case 2:
 				$("iframe").attr("src", "Timeline");
 				break;
 			default:

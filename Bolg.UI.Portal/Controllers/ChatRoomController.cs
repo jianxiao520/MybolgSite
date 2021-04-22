@@ -12,12 +12,15 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Results;
+using System.Web.Mvc;
 using System.Web.WebSockets;
 
 namespace Bolg.UI.Portal.Controllers
 {
     public class ChatRoomController : ApiController
     {
+        private static readonly object Lock = new object();
+
         public static Dictionary<string, ChatRoomUserInfo> CONNECT_POOL = new Dictionary<string, ChatRoomUserInfo>();//用户连接池
         public HttpResponseMessage Get(string Method)
         {
@@ -61,41 +64,97 @@ namespace Bolg.UI.Portal.Controllers
             try
             {
                 #region 新用户进入处理
+                
+                Common.Log.ErrorLogHelp.WriterLog("-------------------------------------");
+                foreach (var item1 in CONNECT_POOL)
+                    if (item1.Value.UserSocket != null)
+                            Common.Log.ErrorLogHelp.WriterLog("循环输出:" + item1.Value.UserToken + " ---" + item1.Value.UserSocket.GetHashCode().ToString());
+
+                Common.Log.ErrorLogHelp.WriterLog("-------------------------------------");
+                Common.Log.ErrorLogHelp.WriterLog("我的Token:" + GetUserData.UserToken);
+                // 若存在先行删除遗留用户数据
+                if (CONNECT_POOL.ContainsKey(GetUserData.UserToken))
+                {
+                    //释放对象以及删除UserToken
+                        CONNECT_POOL.Remove(GetUserData.UserToken);
+                    // await GetUserData.UserSocket.CloseAsync(WebSocketCloseStatus.Empty, "清除", CancellationToken.None);
+                }
                 //分配用户名给新进用户
                 CONNECT_POOL.Add(GetUserData.UserToken, GetUserData);
                 //告诉客户端它的UserId
                 Send_Msg_Type.Send_LoginSession(GetUserData.UserSocket, GetUserData.UserToken.ToString());
-                //判断发送对方是否在线
-                foreach (var item in CONNECT_POOL)
+                //判断发送对方是否在线-给其他用户发送公告
+                foreach (var item in CONNECT_POOL.ToArray())
                 {
-                    if (item.Value.UserSocket.State == WebSocketState.Open && item.Value != null && item.Value.UserSocket != GetUserData.UserSocket)
-                        Send_Msg_Type.Send_System_Msg(item.Value.UserSocket, "欢迎用户[" + GetUserData.NickName + "]进入本聊天室!!!");
+                    try
+                    {
+                        if (item.Value.UserSocket != null)
+                        {
+                            if (item.Value.UserSocket.State == WebSocketState.Open)
+                            {
+                                if (item.Value.UserSocket != GetUserData.UserSocket)
+                                    Send_Msg_Type.Send_System_Msg(item.Value.UserSocket, "欢迎用户[" + GetUserData.NickName + "]进入本聊天室!!!");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //Common.Log.ErrorLogHelp.WriterLog(ex.ToString());
+                        //Common.Log.ErrorLogHelp.WriterLog(ex.ToString());
+                        //Common.Log.ErrorLogHelp.WriterLog("-------------------------------------");
+                        if (ex.Message.IndexOf("无法访问")>=0)
+                            CONNECT_POOL.Remove(item.Value.UserToken);
+                        //foreach (var item1 in CONNECT_POOL)
+                        //    if (item1.Value.UserSocket != null)
+                        //            Common.Log.ErrorLogHelp.WriterLog("循环输出:" + item1.Value.UserToken + " ---" + item1.Value.UserSocket.GetHashCode().ToString());
+                        //Common.Log.ErrorLogHelp.WriterLog("-------------------------------------");
+                        //Common.Log.ErrorLogHelp.WriterLog("我的Token:" + GetUserData.UserToken);
+                        //if (ex.Message.IndexOf("无法访问已经") > 0)
+                        //CONNECT_POOL.Remove(item.Value.UserToken);
+                    }
                 }
                 #endregion
                 while (true)
                 {
                     if (context.WebSocket.State == WebSocketState.Open)
                     {
-                        ArraySegment<byte> buffer = new ArraySegment<byte>(new byte[2048]);
-                        WebSocketReceiveResult result = await context.WebSocket.ReceiveAsync(buffer, CancellationToken.None);
-                        #region 消息处理（字符截取、消息转发）
                         try
                         {
+                            ArraySegment<byte> buffer = new ArraySegment<byte>(new byte[2048]);
+                            WebSocketReceiveResult result = await context.WebSocket.ReceiveAsync(buffer, CancellationToken.None);
+                        #region 消息处理（字符截取、消息转发）
+                        
                             #region 关闭Socket处理，删除连接池
                             //判断是否连接关闭
                             if (context.WebSocket.State != WebSocketState.Open)
                             {
-                                if (CONNECT_POOL.ContainsKey(GetUserData.UserToken)) CONNECT_POOL.Remove(GetUserData.UserToken);//删除连接池
+                                if (CONNECT_POOL.ContainsKey(GetUserData.UserToken))
+                                {
+                                        CONNECT_POOL.Remove(GetUserData.UserToken);
+                                   // await GetUserData.UserSocket.CloseAsync(WebSocketCloseStatus.Empty, "清除", CancellationToken.None);
+                                    //GetUserData.UserSocket.Dispose();
+                                }//删除连接池
                                 break;
                             }
                             #endregion
                             string userMsg = Encoding.UTF8.GetString(buffer.Array, 0, result.Count);//发送过来的消息
                             string[] MsgArray = userMsg.Split('|');
                             //判断发送对方是否在线:
-                            foreach (var item in CONNECT_POOL)
+                            foreach (var item in CONNECT_POOL.ToArray())
                             {
-                                if (item.Value.UserSocket.State == WebSocketState.Open && item.Value != null && item.Value.UserSocket != GetUserData.UserSocket)
-                                    Send_Msg_Type.Send_Other_Msg(item.Value.UserSocket, GetUserData.NickName, MsgArray[1]);
+                                try
+                                {
+                                    if (item.Value.UserSocket != null)
+                                        if (item.Value.UserSocket.State == WebSocketState.Open)
+                                            if (item.Value.UserSocket != GetUserData.UserSocket)
+                                                Send_Msg_Type.Send_Other_Msg(item.Value.UserSocket, GetUserData.NickName, MsgArray[1]);
+                                }
+                                catch (Exception ex)
+                                {
+                                    if (ex.Message.IndexOf("无法访问") >= 0)
+                                        CONNECT_POOL.Remove(item.Value.UserToken);
+       
+                                }
                             }
                         }
                         catch (Exception)
@@ -110,8 +169,10 @@ namespace Bolg.UI.Portal.Controllers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+
+                Common.Log.ErrorLogHelp.WriterLog(ex.ToString());
                 throw;
             }
         }
@@ -192,6 +253,7 @@ namespace Bolg.UI.Portal.Controllers
             }
             return ResultData;
         }
+
     }
     /// <summary>
     /// 发送处理对象

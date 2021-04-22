@@ -35,6 +35,9 @@
     <Reference Include="Common.Logging">
       <HintPath>..\..\..\..\Monitor_day18\SoftA.UI\SoftA.UI.Portal\bin\Common.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\day20\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="PubComp.NoSql.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\PubComp.NoSql.Core.2.0.0\lib\net45\PubComp.NoSql.Core.dll</HintPath>
     </Reference>
@@ -89,6 +92,9 @@
     <Compile Include="Cache\RedisCacheWriter.cs" />
     <Compile Include="CodingHelp.cs" />
     <Compile Include="IPHelper.cs" />
+    <Compile Include="Log\ErrorLogHelp.cs" />
+    <Compile Include="Log\IWriterLog.cs" />
+    <Compile Include="Log\Log4NetWriter.cs" />
     <Compile Include="MD5Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

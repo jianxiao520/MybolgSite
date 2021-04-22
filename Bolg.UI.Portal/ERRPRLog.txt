@@ -1,0 +1,990 @@
+2021-03-19 19:19:04,976 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 1eccb1d3897e9d67b171ac52c1df388e
+2021-03-20 16:55:13,391 [25] DEBUG Bolg.Common.Log.Log4NetWriter - 4983816a7bdc56ea2f0158576d3965d0
+2021-03-20 16:55:43,533 [25] DEBUG Bolg.Common.Log.Log4NetWriter - 455daba6e4d4a86973201c444a17c647
+2021-03-20 16:58:34,646 [25] DEBUG Bolg.Common.Log.Log4NetWriter - 455daba6e4d4a86973201c444a17c647
+2021-03-20 17:36:13,172 [25] DEBUG Bolg.Common.Log.Log4NetWriter - a49e625551ca6c8131d133b4553c2255
+2021-03-20 17:37:20,215 [25] DEBUG Bolg.Common.Log.Log4NetWriter - 0019190b5eaee8e9d2cba995dfd1d667
+2021-03-20 17:37:44,258 [25] DEBUG Bolg.Common.Log.Log4NetWriter - f3b1695b229c93d8ceaf60112b7e1984
+2021-03-20 22:43:02,274 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 4b1d084d4403dab1e1660f7fece7791e
+2021-03-20 22:43:13,696 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 4b1d084d4403dab1e1660f7fece7791e
+2021-03-20 22:43:21,708 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 4b1d084d4403dab1e1660f7fece7791e
+2021-03-20 23:05:44,878 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 60df94aec0f2b6823fbcf81d7900e2f5
+2021-03-20 23:16:24,752 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 62883334a0d41244ff162a34f5f0c5a6
+2021-03-20 23:16:26,758 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 974e0fdd9519ccbe2bd7258d89385a77
+2021-03-20 23:16:29,778 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 93180bd10ddf64647bc5f793f01baafe
+2021-03-20 23:16:33,792 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 344024e57c32a50326d1553b139b25a1
+2021-03-22 00:33:43,924 [7] DEBUG Bolg.Common.Log.Log4NetWriter - System.Data.Entity.Core.EntityException: 基础提供程序在 Open 上失败。 ---> MySql.Data.MySqlClient.MySqlException: Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: 发生一个或多个错误。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:3306
+   在 System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   在 System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Bolg.BLL.CommentService.GetAllCommentDetailedInfo() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\BLL\CommentService.cs:行号 61
+   在 Bolg.UI.Portal.IndexController.Comment_(String Method, String Content, String Comment_Id, String UserToken) 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\IndexController.cs:行号 166
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+2021-03-22 00:58:58,042 [7] DEBUG Bolg.Common.Log.Log4NetWriter - System.Data.Entity.Core.EntityException: 基础提供程序在 Open 上失败。 ---> MySql.Data.MySqlClient.MySqlException: Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: 发生一个或多个错误。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:3306
+   在 System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   在 System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Bolg.BLL.CommentService.GetAllCommentDetailedInfo() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\BLL\CommentService.cs:行号 61
+   在 Bolg.UI.Portal.IndexController.Comment_(String Method, String Content, String Comment_Id, String UserToken) 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\IndexController.cs:行号 166
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+2021-03-22 00:59:06,772 [7] DEBUG Bolg.Common.Log.Log4NetWriter - System.Data.Entity.Core.EntityException: 基础提供程序在 Open 上失败。 ---> MySql.Data.MySqlClient.MySqlException: Unable to connect to any of the specified MySQL hosts. ---> System.AggregateException: 发生一个或多个错误。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:3306
+   在 System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   在 System.Net.Sockets.TcpClient.EndConnect(IAsyncResult asyncResult)
+   在 System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 MySql.Data.Common.StreamCreator.GetTcpStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.Common.StreamCreator.GetStream(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Bolg.BLL.CommentService.GetAllCommentDetailedInfo() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\BLL\CommentService.cs:行号 61
+   在 Bolg.UI.Portal.IndexController.Comment_(String Method, String Content, String Comment_Id, String UserToken) 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\IndexController.cs:行号 166
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+2021-03-22 01:02:05,923 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 19a46ed58daeb79f9b4d9aa6188738db
+2021-03-22 21:28:13,273 [5] DEBUG Bolg.Common.Log.Log4NetWriter - b6df83cbdeefaa1a2f121300d14c7a3f
+2021-03-22 21:28:39,130 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 0c08145c7ad409ea780457af1aceb07c
+2021-03-22 21:29:01,790 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 79d117e18c60d3179f0ffc3002e7b70a
+2021-03-22 21:29:30,420 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 5e6f099cc8b42203e1c445e6ac3d9c02
+2021-03-22 21:30:43,010 [5] DEBUG Bolg.Common.Log.Log4NetWriter - e3746c2a299c1adaef9ac8c57539ec4f
+2021-03-22 21:37:16,042 [10] DEBUG Bolg.Common.Log.Log4NetWriter - 5b09aaa07849b4562d14cd735cead9b1
+2021-03-22 21:37:22,105 [10] DEBUG Bolg.Common.Log.Log4NetWriter - 45f12b776bba72002bb12d482f89bec0
+2021-03-22 21:37:24,106 [10] DEBUG Bolg.Common.Log.Log4NetWriter - de14eb482e236e9d4a5ca2f6e96505b5
+2021-03-22 21:37:25,114 [10] DEBUG Bolg.Common.Log.Log4NetWriter - dac1636b44d2e5e65c95640b6e4f9ead
+2021-03-22 21:37:25,114 [10] DEBUG Bolg.Common.Log.Log4NetWriter - dac1636b44d2e5e65c95640b6e4f9ead
+2021-03-22 21:37:26,116 [10] DEBUG Bolg.Common.Log.Log4NetWriter - 9e74c74f28357211d0f7c0bd02e624f2
+2021-03-22 21:50:25,440 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 334ddabe4c440605946c13483331d8b5
+2021-03-22 21:50:34,337 [5] DEBUG Bolg.Common.Log.Log4NetWriter - d8c749457a79ff7f4d64377401c040f4
+2021-03-22 22:06:12,962 [10] DEBUG Bolg.Common.Log.Log4NetWriter - be1117462af884de6680582797cde30c
+2021-03-22 22:06:18,410 [10] DEBUG Bolg.Common.Log.Log4NetWriter - 38b57a9b03d278f78ba0695bc70f4263
+2021-03-22 22:06:35,429 [10] DEBUG Bolg.Common.Log.Log4NetWriter - a05e95a814cf3e2bc9cbfa0c470cfb6c
+2021-03-22 22:08:45,684 [11] DEBUG Bolg.Common.Log.Log4NetWriter - f7273ba24380fa18d87191765fc08eac
+2021-03-22 22:08:55,738 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 94bac89d87c26a089a58ec996559d6bf
+2021-03-22 22:08:58,742 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 11ce68c36045deac549438df92918a56
+2021-03-22 22:09:08,615 [11] DEBUG Bolg.Common.Log.Log4NetWriter - fd805f70429c1c8f0ce0ae8f9ce41ab2
+2021-03-22 22:09:22,166 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 246fe716cd5b58d2e1a3af32fd3461fb
+2021-03-22 22:09:26,229 [11] DEBUG Bolg.Common.Log.Log4NetWriter - fb109d7e8476ffeabddb2d41a602a06f
+2021-03-22 22:40:22,459 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:26,971 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:26,972 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:54154d7fd0bd7a8e016c7d80345c13fd
+2021-03-22 22:40:44,574 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:44,574 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:54154d7fd0bd7a8e016c7d80345c13fd ---Open
+2021-03-22 22:40:44,574 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:44,574 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:6ffe5b7794b62cfd326fe921638ef176
+2021-03-22 22:40:51,546 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:51,547 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:54154d7fd0bd7a8e016c7d80345c13fd ---Open
+2021-03-22 22:40:51,548 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:6ffe5b7794b62cfd326fe921638ef176 ---Open
+2021-03-22 22:40:51,548 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:40:51,549 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b0d9fcc36ddf558abb1b651684d9ffd5
+2021-03-22 22:41:25,914 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:41:25,915 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:6ffe5b7794b62cfd326fe921638ef176 ---Open
+2021-03-22 22:41:25,915 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b0d9fcc36ddf558abb1b651684d9ffd5 ---Open
+2021-03-22 22:41:25,915 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 22:41:25,916 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:841325fd3700c39c3c1a138d16a0b798
+2021-03-22 23:25:08,174 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:11,349 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:11,349 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:2b5318bc154e817f1bd4891af7b18c32
+2021-03-22 23:25:14,352 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:14,352 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:14,352 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:14,352 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:30814f040b488b4b0f65b44f7a7ef4ec
+2021-03-22 23:25:14,352 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:30814f040b488b4b0f65b44f7a7ef4ec ---9874484
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:14,353 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:30814f040b488b4b0f65b44f7a7ef4ec
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:30814f040b488b4b0f65b44f7a7ef4ec ---9874484
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:16b9ce424149fde3fc699ab7ffac3290
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:27,382 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:30814f040b488b4b0f65b44f7a7ef4ec ---9874484
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:16b9ce424149fde3fc699ab7ffac3290 ---12036987
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:27,383 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:16b9ce424149fde3fc699ab7ffac3290
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:16b9ce424149fde3fc699ab7ffac3290 ---12036987
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:23c33d5df67a757e366e0b71f6701e25
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,386 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:16b9ce424149fde3fc699ab7ffac3290 ---12036987
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:23c33d5df67a757e366e0b71f6701e25
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:16b9ce424149fde3fc699ab7ffac3290 ---12036987
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:29,387 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:23c33d5df67a757e366e0b71f6701e25
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:e25835da3b24b613133cd46f813e6bdf
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:e25835da3b24b613133cd46f813e6bdf ---62476613
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:e25835da3b24b613133cd46f813e6bdf
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:e25835da3b24b613133cd46f813e6bdf ---62476613
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:e25835da3b24b613133cd46f813e6bdf
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:31,389 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:e25835da3b24b613133cd46f813e6bdf ---62476613
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:31,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:e25835da3b24b613133cd46f813e6bdf
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:aad21dca5e3b904de52c950917ef36b4
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:aad21dca5e3b904de52c950917ef36b4 ---50051574
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:aad21dca5e3b904de52c950917ef36b4
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,390 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:aad21dca5e3b904de52c950917ef36b4 ---50051574
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:aad21dca5e3b904de52c950917ef36b4
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:aad21dca5e3b904de52c950917ef36b4 ---50051574
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:aad21dca5e3b904de52c950917ef36b4
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:32,391 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:32,392 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:32,392 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:32,392 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:aad21dca5e3b904de52c950917ef36b4 ---50051574
+2021-03-22 23:25:32,392 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:32,392 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:aad21dca5e3b904de52c950917ef36b4
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b6e2501da00789aabbe814056486e5b8 ---52392654
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b6e2501da00789aabbe814056486e5b8 ---52392654
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,398 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b6e2501da00789aabbe814056486e5b8 ---52392654
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,399 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b6e2501da00789aabbe814056486e5b8 ---52392654
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:23c33d5df67a757e366e0b71f6701e25 ---17924607
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:b6e2501da00789aabbe814056486e5b8 ---52392654
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:41,400 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:b6e2501da00789aabbe814056486e5b8
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,406 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,407 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,408 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:25:52,409 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:25:52,410 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:25:52,410 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:8013b3835f9e2cd5248fe126489df520 ---11404313
+2021-03-22 23:25:52,410 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:25:52,410 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:8013b3835f9e2cd5248fe126489df520
+2021-03-22 23:26:14,996 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:14,997 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:14,998 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:15,003 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:28,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:28,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:28,397 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:45,728 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,729 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,730 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,731 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,732 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:c5facdd06cf2f4483f9c120905280b72 ---64923656
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:46,733 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:c5facdd06cf2f4483f9c120905280b72
+2021-03-22 23:26:52,063 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:52,063 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---48360500
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---9874484
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---12036987
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---17924607
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---62476613
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---50051574
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---52392654
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---11404313
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---64923656
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:26:52,064 [5] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:7cb9e6541bac38cf0deb3d4e357091e3
+2021-03-22 23:28:51,965 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:28:51,965 [5] DEBUG Bolg.Common.Log.Log4NetWriter - System.ObjectDisposedException: 无法访问已释放的对象。
+对象名:“System.Web.WebSockets.AspNetWebSocket”。
+   在 System.Web.WebSockets.AspNetWebSocket.ThrowIfDisposed()
+   在 System.Web.WebSockets.AspNetWebSocket.get_State()
+   在 Bolg.UI.Portal.Controllers.ChatRoomController.<ProcessChat>d__3.MoveNext() 位置 F:\桌面\我的\大学课程笔记\杨咏\第3学期\Day03\黄泽旭10号MVC期末业\Login\Bolg.UI.Portal\Controllers\ChatRoomController.cs:行号 97
+2021-03-22 23:28:51,966 [5] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:31:58,378 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:31:58,408 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:31:58,408 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:37323817cc46486433618beb9c6c0337
+2021-03-22 23:32:01,411 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:01,411 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30376100
+2021-03-22 23:32:01,411 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:01,411 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:7b6389257d4a49625d76ba464b92144c
+2021-03-22 23:32:06,436 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:06,436 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30376100
+2021-03-22 23:32:06,436 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:7b6389257d4a49625d76ba464b92144c ---22599820
+2021-03-22 23:32:06,436 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:06,436 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:754dc543dca48a363404226fa933000b
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30376100
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:7b6389257d4a49625d76ba464b92144c ---22599820
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30887001
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:07,439 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:4972df924600ef8afdaa46a3b28cb73b
+2021-03-22 23:32:18,190 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:18,190 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30376100
+2021-03-22 23:32:18,190 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---22599820
+2021-03-22 23:32:18,190 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---30887001
+2021-03-22 23:32:18,190 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---1968367
+2021-03-22 23:32:18,191 [7] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:32:18,191 [7] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:a6196878472736155942890478ba44c6
+2021-03-22 23:33:48,082 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:33:48,091 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:33:48,092 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:eca790a69ccaed129d0cb3938512cce7
+2021-03-22 23:33:53,453 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:33:53,454 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出: ---31626309
+2021-03-22 23:33:53,454 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:33:53,454 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:ffe55924301f84c52734d385e4e64c73
+2021-03-22 23:34:51,048 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:34:51,058 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:34:51,058 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:382e0d6640a4e8b0a94b65ec287154df
+2021-03-22 23:34:55,066 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:34:55,066 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:382e0d6640a4e8b0a94b65ec287154df ---31626309
+2021-03-22 23:34:55,066 [11] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:34:55,066 [11] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:1a6caacbeed9732c45f2d943e5be494c
+2021-03-22 23:36:19,764 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:19,776 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:19,776 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:852e7697a8ccb3fc285471a39455ee51
+2021-03-22 23:36:25,806 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:25,806 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:852e7697a8ccb3fc285471a39455ee51 ---29222291
+2021-03-22 23:36:25,806 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:25,806 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:e68ec7f31dcbded971a70948c4ac9abf
+2021-03-22 23:36:26,811 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:26,811 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:852e7697a8ccb3fc285471a39455ee51 ---29222291
+2021-03-22 23:36:26,811 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:26,811 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:7bbd7052f1861b8a9e0928918410c5de
+2021-03-22 23:36:27,815 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:27,815 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:852e7697a8ccb3fc285471a39455ee51 ---29222291
+2021-03-22 23:36:27,815 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:27,815 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:ab882e559704cc212eb3e4ace935f3c8
+2021-03-22 23:36:40,407 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:40,408 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:852e7697a8ccb3fc285471a39455ee51 ---29222291
+2021-03-22 23:36:40,408 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:40,408 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:5b38abbd1fff6d2aa7cf1ef6a2bf99a5
+2021-03-22 23:36:50,421 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:50,421 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:852e7697a8ccb3fc285471a39455ee51 ---29222291
+2021-03-22 23:36:50,421 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:50,421 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:5f9589d1bca6fc44f42bc8c1d4b8f8a7
+2021-03-22 23:36:56,433 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:56,433 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 循环输出:5f9589d1bca6fc44f42bc8c1d4b8f8a7 ---21647132
+2021-03-22 23:36:56,433 [12] DEBUG Bolg.Common.Log.Log4NetWriter - -------------------------------------
+2021-03-22 23:36:56,433 [12] DEBUG Bolg.Common.Log.Log4NetWriter - 我的Token:0de69f54977abdc8783239e17af29d17

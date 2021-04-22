@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+<style type="text/css">
+    button {
+        display: inline-block;
+        height: 38px;
+        line-height: 38px;
+        padding: 0 30px;
+        border: 1px solid transparent;
+        color: #fff;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 2px;
+        cursor: pointer;
+        outline: 0;
+        -webkit-appearance: none;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        box-sizing: border-box;
+    }
+
+    button:hover {
+        opacity: .8;
+        filter: alpha(opacity=80);
+        color: #fff;
+    }
+
+    .Save-draft {
+        background-color: #c2c3c3;
+    }
+
+    .Send-article {
+        background-color: #0cb272;
+    }
+    #div1{  
+        padding-top:30px;
+    }
+</style>
+<body>
+    <div id="div1">
+        <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+    </div>
+    <div style="float: right; padding-top: 10px;">
+        <button type="button" class="Save-draft">保存草稿</button>
+        <button type="button" class="Send-article">发布文章</button>
+    </div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        const E = window.wangEditor;
+        const editor = new E('#div1');
+        editor.config.height = 400;
+        editor.create();
+    </script>
+</body>
+</html>

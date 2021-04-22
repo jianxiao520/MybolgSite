@@ -13,15 +13,22 @@
             <ul class="menu">
                 <li><a href="~/index">首页</a></li>
                 @{
-                    if (ViewData["IsLogin"].ToString() == "1")
+                    try
                     {
-                        string Cookie = Request.Cookies["UserToken"].Value;
-                        bk_user UserData = Bolg.Common.Cache.CacheHelper.GetCache<bk_user>(Cookie) as bk_user;
-                        // var user = (bk_user)Session["User"];
-                        string Us_ProfilePhoto = UserData.Us_ProfilePhoto + ".jpg";
-                        <li style="width: auto; padding-left: 30px;"><a href="~/UserInfo/MyHome" style="text-align:right;"><p style="background: url('../UserHeadPortrait/@Us_ProfilePhoto') no-repeat;background-size: 100% 100%;width: 33px;height: 33px;top:2px;left: -25px;border-radius: 50%;display: inline-block;margin-right: 10px;position: absolute;"></p>@UserData.Us_NickName</a></li>
+                        if (ViewData["IsLogin"].ToString() == "1")
+                        {
+                            string Cookie = Request.Cookies["UserToken"].Value;
+                            bk_user UserData = Bolg.Common.Cache.CacheHelper.GetCache<bk_user>(Cookie) as bk_user;
+                            // var user = (bk_user)Session["User"];
+                            string Us_ProfilePhoto = UserData.Us_ProfilePhoto + ".jpg";
+                            <li style="width: auto; padding-left: 30px;"><a href="~/UserInfo/MyHome" style="text-align:right;"><p style="background: url('../UserHeadPortrait/@Us_ProfilePhoto') no-repeat;background-size: 100% 100%;width: 33px;height: 33px;top:2px;left: -25px;border-radius: 50%;display: inline-block;margin-right: 10px;position: absolute;"></p>@UserData.Us_NickName</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/Index/Register">登录&注册</a></li>
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
                         <li><a href="~/Index/Register">登录&注册</a></li>
                     }

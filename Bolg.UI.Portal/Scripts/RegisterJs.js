@@ -59,7 +59,7 @@ $(document).ready(function (){
 	
 });
 //绑定登录验证码
-var myCaptcha = _dx.Captcha(document.getElementById('LoginCode'), {
+var myCaptcha_Login = _dx.Captcha(document.getElementById('LoginCode'), {
     appId: appId, //appId，在控制台中“应用管理”或“应用配置”模块获取
     style: "oneclick",
     success: function (token) {
@@ -69,7 +69,7 @@ var myCaptcha = _dx.Captcha(document.getElementById('LoginCode'), {
     }
 });
 //绑定注册验证码
-var myCaptcha = _dx.Captcha(document.getElementById('RegisterCode'), {
+var myCaptcha_Register = _dx.Captcha(document.getElementById('RegisterCode'), {
     appId: appId, //appId，在控制台中“应用管理”或“应用配置”模块获取
     style: "oneclick",
     success: function (token) {
@@ -117,11 +117,12 @@ function SendLogin() {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "Login_",
+        url: "/Index/Login_",
         async: false, 
         data: SendData,
         success: function (data) {  
             var R_Data = eval("(" + data + ")");
+            if (R_Data.State == "2") { location.href = "../BackEnd/index";}
             if (R_Data.Msg.length >=20 ) {
                 layer.alert("登录成功", {
                     title: '登录消息',
@@ -134,7 +135,7 @@ function SendLogin() {
                 layer.alert(R_Data.Msg, {
                     title: '登录消息'
                 });
-                myCaptcha.reload();
+                myCaptcha_Login.reload();
                 $("#LoginFrom > button").css("display", "none");
             }
         }
@@ -162,7 +163,7 @@ function SendRegister() {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "Login_",
+        url: "/Index/Login_",
         async: false,
         data: SendData,
         success: function (data) {
@@ -175,7 +176,7 @@ function SendRegister() {
                 layer.alert(data[0].Msg, {
                     title: '注册消息'
                 });
-                myCaptcha.reload();
+                myCaptcha_Register.reload();
                 $("#RegisterFrom > button").css("display", "none");
             }
         },

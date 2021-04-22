@@ -11,4 +11,8 @@
   <object type="Bolg.UI.Portal.UserInfoController, Bolg.UI.Portal" singleton="false">
     <property name="UserService_" ref="UserService" />
   </object>
+  <object type="Bolg.UI.Portal.BackEndController, Bolg.UI.Portal" singleton="false">
+    <property name="UserService_" ref="UserService" />
+  </object>
+  
 </objects>

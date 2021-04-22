@@ -64,7 +64,7 @@
                                 @{
                                     if (ViewData["IsLogin"].ToString() == "1")
                                     {
-                                        <div class="FlyMemu"><a href="~/UserInfo/MyHome">我的信息</a><a href="javascript: void(0); " onclick="OutLogin()">退出登录</a></div>
+                                        <div class="FlyMemu"><a onclick="Send_Article()">发布文章</a><a href="~/UserInfo/MyHome">我的信息</a><a href="javascript: void(0); " onclick="OutLogin()">退出登录</a></div>
                                     }
                                 }
                                 </li>
@@ -248,7 +248,7 @@
                     <!-- 自我介绍 -->
                     <!-- 3D旋转图片 -->
                     <div class="photo_album">
-                        <section>
+                        @*<section>
                             <div>
                                 <img src="~/Content/img/MyImg1.jpg">
                             </div>
@@ -267,7 +267,7 @@
                             <div>
                                 <img src="~/Content/img/MyImg6.jpg">
                             </div>
-                        </section>
+                        </section>*@
                     </div>
                     <!-- 3D旋转图片 -->
                 </div>
@@ -308,21 +308,16 @@
             <script src="~/Scripts/layui/layui.js"></script>
             <script src="~/Scripts/Rocket.js" type="text/javascript" charset="utf-8"></script>
             <script>
-                layui.use(['element', 'form'], function () {
-                    var element = layui.element;
-
-                    element.on('tab(test)', function (data) {
-                        console.log(this, data);
-                    });
-
-                    element.on('nav(test)', function (elem) {
-                        console.log(elem)
-                    });
-
-                    element.on('collapse(test)', function (data) {
-                        console.log(data);
-                    });
-                });
+                function Send_Article() {
+                    layer.open({
+                        type: 2,
+                        fixed: false, //不固定
+                        area: ['800px', '700px'],
+                        maxmin: true,
+                        title: "留言",
+                        content: 'Edit_articles' //iframe的url
+                    }); 
+                }
             </script>
         </body>
     </html>

@@ -42,12 +42,17 @@ namespace Bolg.BLL
             {
                 try
                 {
-                    if (db.GameDAL.GetEntities(o => o.Us_Id == UserInfo.Us_Id).ToList().Count() > 0)
+                    List<bk_game> ScoreInfo = db.GameDAL.GetEntities(o => o.Us_Id == UserInfo.Us_Id).ToList();
+                    if (ScoreInfo.Count() > 0)
+                    {
+                        if(ScoreInfo[0].Game_Score > Score)
+                            throw new Exception("您未超越自己的最高分~继续努力!!");
                         db.GameDAL.Update(new bk_game
                         {
                             Us_Id = UserInfo.Us_Id,
                             Game_Score = Score
                         });
+                    }
                     else
                         db.GameDAL.Add(new bk_game
                         {

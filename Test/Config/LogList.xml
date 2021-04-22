@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object id="ChannelAccount" type="Test.Program">
+    <property name="Name" value="某某账户"/>
+  </object>
+  <object id="Test" type="Test.Program">
+    <property name="Name" ref="Name"/>
+  </object>
+  
+  
+  <!--<object id="moreComplexObject" type="Test.Programect">
+    <property name="SomeList">
+      <list>
+        <value>a list element followed by a reference</value>
+        <value>123123</value>
+        <ref object="myConnection"/>
+      </list>
+    </property>
+  </object>-->
+</objects>

@@ -30,8 +30,9 @@ namespace Bolg.UI.Portal
         /// <returns></returns>
         public ActionResult Index()
         {
-            //往前端抛登录状态
-
+          // log4net.Config.XmlConfigurator.Configure();
+            //log4net.ILog log = log4net.LogManager.GetLogger("Debug信息");
+            //log.Debug("123");
             return View();
         }
         /// <summary>
@@ -129,6 +130,16 @@ namespace Bolg.UI.Portal
             // GameService_.UpScore(5, 70);
             return View();
         }
+        /// <summary>
+        /// 发布文章页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Edit_articles()
+        {
+            //List<UserScoreInfo> ScoreInfo = GameService_.QueryRanking();
+            // GameService_.UpScore(5, 70);
+            return View();
+        }
         #endregion
 
 
@@ -188,7 +199,7 @@ namespace Bolg.UI.Portal
                     #region 登录事务
                     var LoginText = UserService_.Check_Pass(U_UserName.Trim(), U_PassWord.Trim(), CodeToken, out bk_user UserInfo);
                     JObject Reader = (JObject)JsonConvert.DeserializeObject(LoginText);
-                    if (Reader["State"].ToString() == "1")
+                    if (Reader["State"].ToString() == "1"|| Reader["State"].ToString() == "2")
                     {
                         //登录成功，帮助客户端设置Cookie
                         Response.Cookies["UserToken"].Value = Reader["Msg"].ToString();
@@ -226,9 +237,20 @@ namespace Bolg.UI.Portal
                     #endregion
                     return Json(ResponseT);
                 case "OutLogin":
-                    #region 退出登录事务
-                    Common.Cache.CacheHelper.RemoveCache(Request.Cookies["UserToken"].Value);
-                    ViewData["IsLogin"] = "0"; UserIsLogin = false;
+                    #region 退出登录事务                    
+                    try
+                    {
+                        ViewData["IsLogin"] = "0"; UserIsLogin = false;
+                        Common.Cache.CacheHelper.RemoveCache(Request.Cookies["UserToken"].Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        return Json(Json_Conver(new Response<String>
+                        {
+                            State = 0,
+                            Msg = ex.Message
+                        }));
+                    }
                     #endregion
                     return Json(Json_Conver(new Response<String>
                     {
@@ -251,3 +273,4 @@ namespace Bolg.UI.Portal
 
     }
 }
+

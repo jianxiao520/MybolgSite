@@ -54,6 +54,11 @@ namespace IBLL
         /// 查询所有用户信息
         /// </summary>
         /// <returns></returns>
-        IQueryable<bk_user> QueryAllData();
+        IQueryable<bk_user> QueryAllData(int page, int limit, out int AllNum);
+
+
+        IQueryable<bk_user> QueryUserByUserName(string UserName, int page, int limit, out int AllNum);
+
+        void UpUserData(int User_Id, string Search_Value, string Search_Field);
     }
 }

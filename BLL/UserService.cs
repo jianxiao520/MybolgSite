@@ -40,11 +40,13 @@ namespace Bolg.BLL
             if (UserInfo.Count != 0)
             {
                 if (UserName == "admin")
+                {
                     JSON = Json_Conver(new Response<String>
                     {
-                        State = 0,
-                        Msg = "欢迎管理员登录~"
+                        State = 2,
+                        Msg = MD5Helper.getMD5String(UserInfo[0].Us_Id + DateTime.Now.ToString())
                     });
+                }
                 else
                 { 
                     JSON = Json_Conver(new Response<string>
@@ -52,8 +54,8 @@ namespace Bolg.BLL
                         State = 1,
                         Msg = MD5Helper.getMD5String(UserInfo[0].Us_Id + DateTime.Now.ToString())//加密Token
                     });
-                    ResultUserInfo = UserInfo[0];
                 }
+                ResultUserInfo = UserInfo[0];
             }
             else
                 JSON = Json_Conver(new Response<String> {
@@ -79,10 +81,12 @@ namespace Bolg.BLL
         /// 查询全部用户
         /// </summary>
         /// <returns></returns>
-        public IQueryable<bk_user> QueryAllData()
+        public IQueryable<bk_user> QueryAllData(int page,int limit,out int AllNum)
         {
             //判断权限
-            return db.UserDAL.QueryAllData("admin");
+            IQueryable<bk_user> UserInfo = db.UserDAL.QueryAllData("admin");
+            AllNum = UserInfo.Count();
+            return UserInfo.OrderBy(o => o.Us_Id).Skip(limit * (page - 1)).Take(limit);
         }
 
         /// <summary>
@@ -129,17 +133,22 @@ namespace Bolg.BLL
         /// <returns></returns>
         public bool ReMoveUserData(string ID)
         {
+            bool Is = true;
             try
             {
                 //递交给DAL层删除用户
                 db.UserDAL.deleteUserById(ID);
                 db.saveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                throw new Exception(ex.Message);
             }
-            return true;
+            finally
+            {
+                Is = false;
+            }
+            return Is;
         }
 
         /// <summary>
@@ -174,7 +183,7 @@ namespace Bolg.BLL
                     db.UserDAL.UpUserData(ID, UserData.Us_ProfilePhoto, "Us_ProfilePhoto");
                 if (UserData.Us_PassWord != null && UserData.Us_PassWord != "")
                     db.UserDAL.UpUserData(ID, UserData.Us_PassWord, "Us_PassWord");
-                if (UserData.Us_Sex >= -1 && UserData.Us_Sex < 1)
+                if (UserData.Us_Sex >= -1 && UserData.Us_Sex <= 1)
                     db.UserDAL.UpUserData(ID, UserData.Us_Sex.ToString(), "Us_Sex");
                 db.saveChanges();
             return true;
@@ -188,6 +197,57 @@ namespace Bolg.BLL
         private string Json_Conver(object FromObject)
         {
             return JsonConvert.SerializeObject(FromObject);
+        }
+
+        public IQueryable<bk_user> QueryUserByUserName(string UserName,int page, int limit, out int AllNum)
+        {
+            //判断权限
+            IQueryable<bk_user> UserInfo = db.UserDAL.QueryUser(UserName, "Us_UserName");
+            AllNum = UserInfo.Count();
+            return UserInfo.OrderBy(o => o.Us_Id).Skip(limit * (page - 1)).Take(limit);
+        }
+
+        public void UpUserData(int User_Id, string Search_Value, string Search_Field)
+        {
+            bk_user hp1 = this.FindUserData(User_Id.ToString());
+            switch (Search_Field)
+            {
+                case "Us_Ip":
+                    hp1.Us_Ip = Search_Value;
+                    break;
+                case "Us_UserName":
+                    hp1.Us_UserName = Search_Value;
+                    break;
+                case "Us_Eamil":
+                    hp1.Us_Eamil = Search_Value;
+                    break;
+                case "Us_Phone":
+                    hp1.Us_Phone = Search_Value;
+                    break;
+                case "Us_NickName":
+                    hp1.Us_NickName = Search_Value;
+                    break;
+                case "Us_ProfilePhoto":
+                    hp1.Us_ProfilePhoto = Search_Value;
+                    break;
+                case "Us_Birthday":
+                    hp1.Us_Birthday = Convert.ToDateTime(Search_Value);
+                    break;
+                case "Us_PassWord":
+                    hp1.Us_PassWord = Search_Value;
+                    break;
+                case "Us_Sex":
+                    hp1.Us_Sex = Int32.Parse(Search_Value);
+                    break;
+                case "Is_Del":
+                    hp1.Is_Del = Int32.Parse(Search_Value);
+                    break;
+                default:
+                    hp1.Us_UserName = Search_Value;
+                    break;
+            }
+            db.UserDAL.Update(hp1);
+            db.saveChanges();
         }
     }
 }
